@@ -38,20 +38,41 @@ DatoCMS arbeitest — egal über welchen Skill.
 
 ## Vorschau
 
-- Nach dem Anlegen/Ändern: Der Editor findet den **Vorschau-Link direkt in der
-  DatoCMS-Sidebar** («Web Previews»). Weise ihn darauf hin.
-- Draft-Vorschauen laufen über `https://develop.erichkeller.ch/preview/…` —
-  konstruiere solche URLs nicht selbst, sondern verweise auf die Sidebar-Links.
+Nach dem Anlegen/Ändern zeigst du dem Editor den Vorschau-Link direkt in
+deiner Antwort. So kommst du an die Links:
+
+1. Der Endpoint `https://develop.erichkeller.ch/api/preview-links` liefert
+   fertige Links. Aufruf: `POST` mit JSON-Body
+   `{ "item": { "id": "<record-id>", "meta": { "status": "<status>" } }, "locale": "de" }`.
+   Er ist mit `?token=…` geschützt — den Token findest du via DatoCMS-MCP in
+   der Konfiguration des «Web Previews»-Plugins (die dort hinterlegte
+   Endpoint-URL enthält ihn als `?token=`-Parameter).
+2. Die Antwort enthält `previewLinks` mit beschrifteten URLs
+   («Entwurf · DE» usw.) — gib den Entwurfs-Link direkt aus. Er läuft über
+   `/api/draft` und setzt selbst das nötige Zugriffs-Cookie.
+3. **Konstruiere nie selbst `/preview/…`-URLs** — sie funktionieren ohne
+   dieses Cookie nicht, und die Pfadlogik (Seitenbaum, Sprachen) liegt im
+   Endpoint.
+
+Fallback (Endpoint nicht erreichbar oder liefert nichts — aktuell z.B. bei
+Referenzen): auf die «Web Previews»-Links in der DatoCMS-Sidebar verweisen
+bzw. bei Referenzen auf den Record im CMS.
 
 ## Arbeiten mit lokalem Material
 
 - Editoren haben oft Word-Dokumente, PDFs oder Bilder im Arbeitsordner. Lies
   sie vollständig, bevor du fragst — frage nur nach dem, was wirklich fehlt.
-- **Bilder:** Kläre zu Beginn der Session einmal, ob du Bilder direkt in die
-  DatoCMS Media Library hochladen kannst. Falls nicht: Bitte den Editor, die
-  Bilder selbst in die Media Library zu ziehen (Drag & Drop im CMS), und
-  verknüpfe sie danach. Sag ihm dabei konkret, welche Dateien gebraucht werden
-  und wofür.
+- **Bilder: Du kannst keine lokalen Dateien hochladen.** Der DatoCMS-MCP
+  läuft in einer Remote-Sandbox ohne Zugriff auf den Rechner des Editors —
+  versuche es gar nicht erst. Stattdessen: Sag dem Editor **konkret, welche
+  Dateien gebraucht werden und wofür** (z.B. «bitte `IMG_2041.jpg` als
+  Teaser-Bild in die Media Library ziehen»), lass ihn sie per Drag & Drop in
+  die Media Library laden, finde sie danach via MCP (Suche nach Dateiname)
+  und verknüpfe sie.
+- **Keine Stock-Bilder für Referenzen.** Der MCP kann Bilder von
+  Stock-Diensten (Unsplash u.a.) beziehen — für Referenzen sind aber immer
+  echte Projektfotos Pflicht. Stock nur, wenn der Editor es ausdrücklich für
+  anderes Material verlangt.
 
 ## Ton & Textqualität
 

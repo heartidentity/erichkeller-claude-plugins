@@ -22,8 +22,8 @@ diese Regeln gelten verbindlich (nur Drafts, nie erfinden, nie publizieren).
 3. **Struktur vorschlagen.** Schlage Header + Section-Abfolge als kompakte
    Gliederung vor (Block + einzeiliger Inhalt je Section) und hole das Okay
    ab, **bevor** du Records anlegst.
-4. **Als Draft anlegen**, danach auf den Vorschau-Link in der DatoCMS-Sidebar
-   hinweisen.
+4. **Als Draft anlegen**, danach den Vorschau-Link gemäss Redaktionsregeln
+   holen und direkt in der Antwort anzeigen.
 
 ## Header: genau ein Block
 

@@ -25,8 +25,10 @@ verbindlich (nur Drafts, nie erfinden, nie publizieren).
    nichts, auch keine «vorläufigen» Werte.
 4. **Zusammenfassen und Okay einholen.** Zeige kompakt, was du anlegen wirst
    (Titel, Zuordnungen, Seitenaufbau), und warte auf Bestätigung.
-5. **Als Draft anlegen.** Danach: auf den Vorschau-Link in der DatoCMS-Sidebar
-   hinweisen und sagen, dass Publizieren beim Editor liegt.
+5. **Als Draft anlegen.** Danach den Vorschau-Link gemäss Redaktionsregeln
+   holen und direkt anzeigen (Hinweis: für Referenzen liefert der
+   Preview-Endpoint aktuell noch keine Links — dann auf den Record im CMS
+   verweisen). Publizieren liegt beim Editor.
 
 ## Checkliste: Was eine Referenz braucht
 
