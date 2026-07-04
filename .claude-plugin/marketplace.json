@@ -1,0 +1,13 @@
+{
+	"name": "erichkeller",
+	"owner": {
+		"name": "Heart Identity"
+	},
+	"plugins": [
+		{
+			"name": "redaktion",
+			"source": "./plugins/redaktion",
+			"description": "Redaktions-Assistent für erichkeller.ch: Referenzen erfassen und CMS-Seiten bauen, direkt in DatoCMS (via MCP)."
+		}
+	]
+}
