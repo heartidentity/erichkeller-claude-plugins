@@ -26,9 +26,7 @@ verbindlich (nur Drafts, nie erfinden, nie publizieren).
 4. **Zusammenfassen und Okay einholen.** Zeige kompakt, was du anlegen wirst
    (Titel, Zuordnungen, Seitenaufbau), und warte auf Bestätigung.
 5. **Als Draft anlegen.** Danach den Vorschau-Link gemäss Redaktionsregeln
-   holen und direkt anzeigen (Hinweis: für Referenzen liefert der
-   Preview-Endpoint aktuell noch keine Links — dann auf den Record im CMS
-   verweisen). Publizieren liegt beim Editor.
+   holen und direkt anzeigen. Publizieren liegt beim Editor.
 
 ## Checkliste: Was eine Referenz braucht
 

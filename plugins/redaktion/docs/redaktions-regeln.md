@@ -54,9 +54,10 @@ deiner Antwort. So kommst du an die Links:
    dieses Cookie nicht, und die Pfadlogik (Seitenbaum, Sprachen) liegt im
    Endpoint.
 
-Fallback (Endpoint nicht erreichbar oder liefert nichts — aktuell z.B. bei
-Referenzen): auf die «Web Previews»-Links in der DatoCMS-Sidebar verweisen
-bzw. bei Referenzen auf den Record im CMS.
+Der Endpoint löst Startseite, Seiten (`cms_page`) und Referenzen auf.
+
+Fallback (Endpoint nicht erreichbar oder liefert nichts): auf die
+«Web Previews»-Links in der DatoCMS-Sidebar verweisen.
 
 ## Arbeiten mit lokalem Material
 
@@ -64,15 +65,53 @@ bzw. bei Referenzen auf den Record im CMS.
   sie vollständig, bevor du fragst — frage nur nach dem, was wirklich fehlt.
 - **Bilder: Du kannst keine lokalen Dateien hochladen.** Der DatoCMS-MCP
   läuft in einer Remote-Sandbox ohne Zugriff auf den Rechner des Editors —
-  versuche es gar nicht erst. Stattdessen: Sag dem Editor **konkret, welche
-  Dateien gebraucht werden und wofür** (z.B. «bitte `IMG_2041.jpg` als
-  Teaser-Bild in die Media Library ziehen»), lass ihn sie per Drag & Drop in
-  die Media Library laden, finde sie danach via MCP (Suche nach Dateiname)
-  und verknüpfe sie.
+  versuche es gar nicht erst. Der Ablauf ist stattdessen dreistufig:
+  prüfen/aufbereiten (du) → hochladen (Editor) → verknüpfen (du). Details
+  im nächsten Abschnitt.
 - **Keine Stock-Bilder für Referenzen.** Der MCP kann Bilder von
   Stock-Diensten (Unsplash u.a.) beziehen — für Referenzen sind aber immer
   echte Projektfotos Pflicht. Stock nur, wenn der Editor es ausdrücklich für
   anderes Material verlangt.
+
+## Bilder prüfen, aufbereiten, hochladen lassen
+
+**1. Prüfen (du, lokal).** Bevor du um einen Upload bittest, prüfe jede
+Bilddatei mit macOS-Bordmitteln:
+
+```
+sips -g format -g pixelWidth -g pixelHeight <datei>
+```
+
+Upload-tauglich ist: **JPG oder PNG, längste Kante ≤ 6000 px** (PNG nur für
+Grafiken/Screenshots/Transparenz — Fotos immer als JPG). Alles andere —
+TIFF, HEIC, PSD, Bilder über 6000 px oder absurd grosse Dateien — bereitest
+du erst auf.
+
+**2. Aufbereiten (du, lokal).** Lege web-taugliche Kopien in einen
+Unterordner `upload-ready/` im Arbeitsordner — **Originale nie verändern
+oder löschen**:
+
+```
+sips -s format jpeg -s formatOptions 85 <datei> --out upload-ready/<name>.jpg
+```
+
+Ist die längste Kante über 6000 px, zusätzlich `-Z 6000` mitgeben (vorher
+Dimensionen prüfen — `-Z` nur bei zu grossen Bildern verwenden, es würde
+kleine Bilder hochskalieren). Sag dem Editor kurz, was du konvertiert hast
+und warum.
+
+**3. Hochladen (Editor).** Gib eine klare, konkrete Anweisung mit
+Direktlink — etwa:
+
+> Die Bilder sind noch nicht im CMS. Öffne die Media Library
+> (https://erich-keller.admin.datocms.com/media) und zieh diese Dateien aus
+> `upload-ready/` per Drag & Drop hinein: `kita-zuerich-01.jpg`
+> (Teaser-Bild), `kita-zuerich-05.jpg` (Bildergalerie). Sag mir, wenn sie
+> oben sind.
+
+**4. Verknüpfen (du, via MCP).** Finde die Uploads über die Dateinamen-Suche
+in der Media Library, verknüpfe sie in den richtigen Feldern und schlage
+dabei gleich einen Alt-Text pro Bild vor (kurz, beschreibend, de).
 
 ## Ton & Textqualität
 
