@@ -22,8 +22,12 @@ diese Regeln gelten verbindlich (nur Drafts, nie erfinden, nie publizieren).
 3. **Struktur vorschlagen.** Schlage Header + Section-Abfolge als kompakte
    Gliederung vor (Block + einzeiliger Inhalt je Section) und hole das Okay
    ab, **bevor** du Records anlegst.
-4. **Als Draft anlegen**, danach den Vorschau-Link gemäss Redaktionsregeln
-   holen und direkt in der Antwort anzeigen.
+4. **Als Draft anlegen.** Die exakten Felder jedes Blocks (Pflichtfelder,
+   Enum-Werte, verschachtelte Blöcke) stehen in
+   `${CLAUDE_PLUGIN_ROOT}/skills/seite-bauen/references/schema.md`; fertige
+   Script-Rezepte (Sections hinzufügen, Vorschau-Link holen) in
+   `${CLAUDE_PLUGIN_ROOT}/docs/cma-rezepte.md`. Danach den Vorschau-Link
+   gemäss Redaktionsregeln direkt in der Antwort anzeigen.
 
 ## Header: genau ein Block
 
@@ -35,8 +39,11 @@ diese Regeln gelten verbindlich (nur Drafts, nie erfinden, nie publizieren).
 
 ## Section-Katalog (Kurzreferenz)
 
-Das CMS ist die Wahrheit — hole die aktuelle Blockliste via MCP, wenn etwas
-fehlt oder unklar ist. Zweck der Blöcke:
+Diese Liste beschreibt den **Zweck** der Blöcke; ihre Felder, Pflichtfelder
+und Enum-Werte stehen in
+`${CLAUDE_PLUGIN_ROOT}/skills/seite-bauen/references/schema.md` — lies sie
+statt das Schema via MCP zu holen. Nur bei Unklarheiten oder wenn dort etwas
+zu fehlen scheint, via DatoCMS-MCP nachschlagen (das CMS bleibt die Wahrheit).
 
 **Text & Inhalt**
 - `richtext_block` — Fliesstext (die einfachste Wahl für Prosa).
@@ -60,6 +67,14 @@ fehlt oder unklar ist. Zweck der Blöcke:
 - `tabs_with_media_section` — Inhalte in Tabs mit Medium.
 - `airflow_animation` — dekorative Luftstrom-Animation; Spezialfall, nur wo
   bereits etabliert.
+
+**Produkt-Hero (nur direkt nach dem Header)**
+- `product_carousel_section` — zwei gegenläufige Bildbänder unter einer
+  Überschrift; untere Zone eines Produkt-Headers. Nur als erste Section
+  direkt nach einem `page_intro`-Header.
+- `color_slider_section` — Farbwechsel-Slider: durchlaufende Produktbilder,
+  die das Header-Band einfärben; untere Zone eines Produkt-Headers. Nur als
+  erste Section direkt nach einem `page_intro`-Header.
 
 **Teaser & Sammlungen**
 - `reference_teasers_section` — handverlesene Referenzen anteasern.
@@ -90,6 +105,10 @@ fehlt oder unklar ist. Zweck der Blöcke:
   `image_marquee`, `airflow_animation`, `hero_slider`) maximal je einmal
   einsetzen.
 - **`contact_cta` steht am Schluss** — und nur einmal.
+- **Produkt-Hero direkt an den Header:** `product_carousel_section` und
+  `color_slider_section` sind die untere Zone eines Produkt-Headers und
+  stehen nur als **erste** Section direkt nach einem `page_intro`-Header —
+  nie mitten auf der Seite.
 - **Übersicht vs. Inhalt trennen:** `collection_section` und
   `job_listing_section` tragen eine Seite (Übersichtsseite), sie sind kein
   Zwischenelement.

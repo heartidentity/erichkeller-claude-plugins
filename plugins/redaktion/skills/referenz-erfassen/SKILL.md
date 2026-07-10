@@ -15,9 +15,13 @@ verbindlich (nur Drafts, nie erfinden, nie publizieren).
 1. **Material sichten.** Liegt lokales Material vor (Word, PDF, Notizen,
    Bilder), lies es vollständig. Extrahiere alles, was du den Feldern unten
    zuordnen kannst.
-2. **Schema und Beispiele laden.** Hole via DatoCMS-MCP das aktuelle
-   `reference`-Modell (die Felder unten können sich weiterentwickelt haben —
-   das CMS ist die Wahrheit) und schau dir 1–2 bestehende, publizierte
+2. **Schema-Referenz und Beispiele laden.** Die vollständige Feld-Referenz
+   (Modell `reference`, Taxonomien, Block-Katalog mit Feldern, Pflichtfeldern
+   und Enum-Werten) liegt lokal in
+   `${CLAUDE_PLUGIN_ROOT}/skills/referenz-erfassen/references/schema.md` —
+   lies sie statt das Schema via MCP zu holen. Nur bei Unklarheiten oder wenn
+   dort etwas zu fehlen scheint, via DatoCMS-MCP nachschlagen (das CMS bleibt
+   die Wahrheit). Schau dir zusätzlich via MCP 1–2 bestehende, publizierte
    Referenzen an: Feldnutzung, Textlänge, Tonalität, typischer Seitenaufbau.
 3. **Lücken identifizieren und nachfragen.** Gleiche das Material mit der
    Checkliste unten ab. Frage den Editor **gesammelt und konkret** nach allem,
@@ -25,8 +29,10 @@ verbindlich (nur Drafts, nie erfinden, nie publizieren).
    nichts, auch keine «vorläufigen» Werte.
 4. **Zusammenfassen und Okay einholen.** Zeige kompakt, was du anlegen wirst
    (Titel, Zuordnungen, Seitenaufbau), und warte auf Bestätigung.
-5. **Als Draft anlegen.** Danach den Vorschau-Link gemäss Redaktionsregeln
-   holen und direkt anzeigen. Publizieren liegt beim Editor.
+5. **Als Draft anlegen.** Nutze die fertigen Script-Rezepte in
+   `${CLAUDE_PLUGIN_ROOT}/docs/cma-rezepte.md` (Taxonomien laden,
+   Referenz-Draft anlegen, Vorschau-Link holen). Danach den Vorschau-Link
+   gemäss Redaktionsregeln direkt anzeigen. Publizieren liegt beim Editor.
 
 ## Checkliste: Was eine Referenz braucht
 
@@ -40,9 +46,11 @@ Pflicht — ohne diese Angaben nicht anlegen:
 - **Referenz-Attribute** — sie steuern die Filter der Referenz-Übersicht und
   müssen darum sauber gesetzt sein:
   - `project_types` (Projektart), `industries` (Branche), `solutions`
-    (Lösungen): **immer aus den bestehenden Records wählen** — via MCP die
-    vorhandenen Einträge auflisten und dem Editor zur Auswahl vorlegen. Keine
-    neuen Taxonomie-Einträge anlegen, ohne explizit nachzufragen.
+    (Lösungen): **immer aus den bestehenden Records wählen** — die Einträge
+    mit einem einzigen Script laden (Rezept «Taxonomien laden» in
+    `${CLAUDE_PLUGIN_ROOT}/docs/cma-rezepte.md`) und dem Editor zur Auswahl
+    vorlegen. Keine neuen Taxonomie-Einträge anlegen, ohne explizit
+    nachzufragen.
   - `characteristics` (Merkmale): sind **je einer Lösung zugeordnet** — nur
     Merkmale anbieten, die zu den gewählten `solutions` gehören.
   - `products`: die im Projekt eingesetzten Produkte, aus den bestehenden
