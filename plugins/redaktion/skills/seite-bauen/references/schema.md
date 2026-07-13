@@ -30,7 +30,7 @@ singleton
 | `title` | string | ✓ | ✓ |  |
 | `seo` | seo |  | ✓ |  |
 | `header` | rich_text |  | ✓ | Blöcke: `hero_slider`, `page_intro`, `statement_media_section` · max. 1 |
-| `sections` | rich_text |  | ✓ | Blöcke: `statement_media_section`, `content_with_media_section`, `sticky_scroll_section`, `tabs_with_media_section`, `text_columns_section`, `richtext_block`, `accordion`, `stats_section`, `facts_figures_section`, `pikto_section`, `media_block`, `reference_teasers_section`, `teaser_collection_section`, `collection_section`, `card_grid`, `contact_cta`, `link_list`, `quote_section`, `hubspot_form_section`, `job_listing_section`, `image_marquee`, `airflow_animation`, `solution_slider`, `product_detail_section`, `downloads_section`, `pcon_configurator_section`, `product_carousel_section`, `color_slider_section` |
+| `sections` | rich_text |  | ✓ | Blöcke: `statement_media_section`, `content_with_media_section`, `sticky_scroll_section`, `tabs_with_media_section`, `text_columns_section`, `richtext_block`, `accordion`, `stats_section`, `facts_figures_section`, `pikto_section`, `media_block`, `reference_teasers_section`, `teaser_collection_section`, `image_text_grid_section`, `collection_section`, `card_grid`, `contact_cta`, `link_list`, `quote_section`, `hubspot_form_section`, `job_listing_section`, `image_marquee`, `airflow_animation`, `solution_slider`, `product_detail_section`, `downloads_section`, `pcon_configurator_section`, `product_carousel_section`, `color_slider_section` |
 
 ### `cms_page` — 📄 CMS Page
 
@@ -42,7 +42,7 @@ tree (Seitenbaum)
 | `slug` | slug |  | ✓ | abgeleitet aus `title` |
 | `seo` | seo |  | ✓ |  |
 | `header` | rich_text |  | ✓ | Blöcke: `hero_slider`, `page_intro`, `statement_media_section` · max. 1 |
-| `sections` | rich_text |  | ✓ | Blöcke: `statement_media_section`, `content_with_media_section`, `sticky_scroll_section`, `tabs_with_media_section`, `text_columns_section`, `richtext_block`, `accordion`, `stats_section`, `facts_figures_section`, `pikto_section`, `media_block`, `reference_teasers_section`, `teaser_collection_section`, `collection_section`, `card_grid`, `contact_cta`, `link_list`, `quote_section`, `hubspot_form_section`, `job_listing_section`, `image_marquee`, `airflow_animation`, `solution_slider`, `product_detail_section`, `downloads_section`, `pcon_configurator_section`, `product_carousel_section`, `color_slider_section` |
+| `sections` | rich_text |  | ✓ | Blöcke: `statement_media_section`, `content_with_media_section`, `sticky_scroll_section`, `tabs_with_media_section`, `text_columns_section`, `richtext_block`, `accordion`, `stats_section`, `facts_figures_section`, `pikto_section`, `media_block`, `reference_teasers_section`, `teaser_collection_section`, `image_text_grid_section`, `collection_section`, `card_grid`, `contact_cta`, `link_list`, `quote_section`, `hubspot_form_section`, `job_listing_section`, `image_marquee`, `airflow_animation`, `solution_slider`, `product_detail_section`, `downloads_section`, `pcon_configurator_section`, `product_carousel_section`, `color_slider_section` |
 
 ### `solution` — 💡 Solution
 
@@ -117,7 +117,7 @@ collection · Titel-Feld: `title`
 | `volume` | string |  |  | Werte: `up_to_50k` · `50k_to_250k` · `250k_to_1m` · `over_1m` |
 | `seo` | seo |  | ✓ |  |
 | `header` | rich_text |  | ✓ | Blöcke: `hero_slider`, `page_intro`, `statement_media_section` · max. 1 |
-| `sections` | rich_text |  | ✓ | Blöcke: `statement_media_section`, `content_with_media_section`, `sticky_scroll_section`, `tabs_with_media_section`, `text_columns_section`, `richtext_block`, `accordion`, `stats_section`, `facts_figures_section`, `pikto_section`, `media_block`, `reference_teasers_section`, `teaser_collection_section`, `collection_section`, `card_grid`, `contact_cta`, `link_list`, `quote_section`, `hubspot_form_section`, `job_listing_section`, `image_marquee`, `airflow_animation`, `solution_slider`, `product_detail_section`, `downloads_section`, `pcon_configurator_section`, `product_carousel_section`, `color_slider_section` |
+| `sections` | rich_text |  | ✓ | Blöcke: `statement_media_section`, `content_with_media_section`, `sticky_scroll_section`, `tabs_with_media_section`, `text_columns_section`, `richtext_block`, `accordion`, `stats_section`, `facts_figures_section`, `pikto_section`, `media_block`, `reference_teasers_section`, `teaser_collection_section`, `image_text_grid_section`, `collection_section`, `card_grid`, `contact_cta`, `link_list`, `quote_section`, `hubspot_form_section`, `job_listing_section`, `image_marquee`, `airflow_animation`, `solution_slider`, `product_detail_section`, `downloads_section`, `pcon_configurator_section`, `product_carousel_section`, `color_slider_section` |
 
 ### `person` — 👤 Person
 
@@ -199,6 +199,8 @@ Einsatz: **Header** = erlaubt im `header`-Feld (genau 1 Block) · **Section** = 
 | `reference_teasers_section` | 🏗️ Reference Teasers | Section |
 | `teaser_link` | 🧲 Teaser Link | Baustein |
 | `teaser_collection_section` | 🧲 Teaser Collection | Section |
+| `image_text_item` | 🖼️ Image Text Item | Baustein |
+| `image_text_grid_section` | 🖼️ Image Text Grid | Section |
 | `collection_section` | 🗂️ Collection | Section |
 | `card` | 🃏 Card | Baustein |
 | `card_grid` | 🃏 Card Grid | Section |
@@ -276,8 +278,8 @@ block · Einsatz: Header (`home_page.header`, `cms_page.header`, `reference.head
 
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
+| `heading` | string |  |  | Optional heading shown above the lead text. |
 | `lead` | text |  |  |  |
-| `lead_style` | string |  |  | Werte: `hero` · `plain` · `statement` · Default: `plain` — hero: large with link · plain: smaller grey, optional CTA button · statement: display size (Portrait) |
 | `logo` | string |  |  | Werte: `none` · `talky` · `riotherm` · Default: `none` — Optional brand logo shown above the title. |
 | `background` | string |  |  | Werte: `white` · `grey` · Default: `white` — Band background. Consecutive blocks of the same colour merge into one band. |
 | `link` | rich_text |  |  | Blöcke: `nav_link` · max. 1 |
@@ -478,6 +480,7 @@ block · Einsatz: Baustein (`teaser_collection_section.items`)
 | `external_url` | string |  |  |  |
 | `anchor` | string |  |  | Optional #anchor on the target page. |
 | `title` | string |  |  | Defaults to the linked target's title. |
+| `text` | text |  |  | Optional short description shown under the title. |
 | `image` | file |  |  | Defaults to the linked target's teaser image. |
 
 ### `teaser_collection_section` — 🧲 Teaser Collection
@@ -491,6 +494,27 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`, `reference
 | `link` | rich_text |  |  | Blöcke: `nav_link` · max. 1 |
 | `items` | rich_text |  |  | Blöcke: `teaser_link` |
 | `layout` | string |  |  | Werte: `editorial_rows` · `grid_3` · `grid_2` · `slider` · Default: `grid_3` |
+
+### `image_text_item` — 🖼️ Image Text Item
+
+block · Einsatz: Baustein (`image_text_grid_section.items`)
+
+| Feld | Typ | Pflicht | Lok | Details |
+| --- | --- | :-: | :-: | --- |
+| `image` | file | ✓ |  |  |
+| `title` | string | ✓ |  |  |
+| `text` | text |  |  |  |
+
+### `image_text_grid_section` — 🖼️ Image Text Grid
+
+block · Einsatz: Section (`home_page.sections`, `cms_page.sections`, `reference.sections`)
+
+| Feld | Typ | Pflicht | Lok | Details |
+| --- | --- | :-: | :-: | --- |
+| `heading` | string |  |  |  |
+| `intro` | text |  |  |  |
+| `items` | rich_text |  |  | Blöcke: `image_text_item` |
+| `layout` | string |  |  | Werte: `grid_3` · `grid_2` · Default: `grid_3` |
 
 ### `collection_section` — 🗂️ Collection
 
@@ -621,8 +645,10 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`, `reference
 
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
-| `heading` | string |  |  | Optional section title above the product nav, e.g. "Grössen im Überblick". Only shown in the Stacked variant. |
-| `variant` | string |  |  | Werte: `stacked` · `tabs` · Default: `stacked` — Stacked: sticky product nav + all products below each other. Tabs: one product at a time (not built yet). |
+| `heading` | string |  |  | Optional section title, e.g. "Grössen im Überblick". Stacked: above the product nav. Tabs: centered display title on the grey band. |
+| `subtitle` | string |  |  | Optional line under the heading, e.g. "Für moderne Kontrollraumarbeitsplätze". Only shown in the Tabs variant. |
+| `intro` | text |  |  | Optional short intro paragraph under the subtitle. Only shown in the Tabs variant. |
+| `variant` | string |  |  | Werte: `stacked` · `tabs` · Default: `stacked` — Stacked: sticky product nav + all products below each other. Tabs: pill tab nav, one product at a time. |
 | `products` | links |  |  | → `product` |
 
 ### `download_item` — 📄 Download
