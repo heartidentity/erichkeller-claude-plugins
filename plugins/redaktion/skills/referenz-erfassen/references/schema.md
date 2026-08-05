@@ -8,25 +8,26 @@ Sprachen: `de` (Hauptsprache), `en`, `fr`. **Lok ✓** = lokalisiertes Feld: bei
 
 | api_key | Art | Label |
 | --- | --- | --- |
-| `home_page` | singleton | 🏠 Homepage |
-| `cms_page` | tree (Seitenbaum) | 📄 CMS Page |
-| `solution` | collection | 💡 Solution |
-| `product` | collection | 🛋️ Product |
-| `available_model` | collection | 📦 Available model |
-| `industry` | collection | 🏭 Industry |
-| `project_type` | collection | 🏷️ Project Type |
-| `project_kind` | collection | 🔨 Project Kind |
-| `project_volume` | collection | 💰 Project Volume |
-| `reference` | collection | 🏗️ Reference |
+| `home_page` | singleton | 🏠 Startseite |
+| `cms_page` | tree (Seitenbaum) | 📄 CMS-Seite |
+| `solution` | collection | 💡 Geschäftsbereich |
+| `product_family` | collection | 🧩 Produktfamilie |
+| `product` | collection | 🛋️ Produkt |
+| `available_model` | collection | 📦 Verfügbares Modell |
+| `industry` | collection | 🏭 Branche |
+| `project_type` | collection | 🏷️ Raum- / Objekttyp |
+| `project_kind` | collection | 🔨 Projektart |
+| `project_volume` | collection | 💰 Projektvolumen |
+| `reference` | collection | 🏗️ Referenz |
 | `person` | collection | 👤 Person |
-| `location_type` | collection | 🏷️ Location Type |
-| `location` | collection | 📍 Location |
-| `translation` | collection | 🌐 Translation |
+| `location_type` | collection | 🏷️ Standort-Typ |
+| `location` | collection | 📍 Standort |
+| `translation` | collection | 🌐 Übersetzung |
 | `website` | singleton | ⚙️ Website |
 | `redirect` | collection | ↪️ Redirect |
-| `slide_deck` | collection | 🎞️ Slide deck |
+| `slide_deck` | collection | 🎞️ Slide-Deck |
 
-### `home_page` — 🏠 Homepage
+### `home_page` — 🏠 Startseite
 
 singleton
 
@@ -35,9 +36,9 @@ singleton
 | `title` | string | ✓ | ✓ |  |
 | `seo` | seo |  | ✓ |  |
 | `header` | rich_text |  | ✓ | Blöcke: `hero_slider`, `page_intro`, `statement_media_section` · max. 1 |
-| `sections` | rich_text |  | ✓ | Blöcke: `anchor`, `spacer_section`, `statement_media_section`, `content_with_media_section`, `sticky_scroll_section`, `tabs_with_media_section`, `text_columns_section`, `richtext_block`, `accordion`, `stats_section`, `facts_figures_section`, `pikto_section`, `media_block`, `media_slider_section`, `reference_teasers_section`, `available_models_section`, `teaser_collection_section`, `image_text_grid_section`, `collection_section`, `contact_cta`, `link_list`, `quote_section`, `hubspot_form_section`, `job_listing_section`, `locations_section`, `image_marquee`, `airflow_animation`, `solution_slider`, `product_detail_section`, `downloads_section`, `pcon_configurator_section`, `product_carousel_section`, `color_slider_section`, `content_tab_nav_section`, `flexible_image_section` |
+| `sections` | rich_text |  | ✓ | Blöcke: `anchor`, `spacer_section`, `statement_media_section`, `content_with_media_section`, `sticky_scroll_section`, `tabs_with_media_section`, `text_columns_section`, `richtext_block`, `accordion`, `stats_section`, `facts_figures_section`, `pikto_section`, `media_block`, `external_video_block`, `media_slider_section`, `reference_teasers_section`, `available_models_section`, `teaser_collection_section`, `image_text_grid_section`, `collection_section`, `contact_cta`, `link_list`, `quote_section`, `hubspot_form_section`, `job_listing_section`, `locations_section`, `image_marquee`, `airflow_animation`, `solution_slider`, `product_detail_section`, `downloads_section`, `pcon_configurator_section`, `product_carousel_section`, `color_slider_section`, `content_tab_nav_section`, `flexible_image_section` |
 
-### `cms_page` — 📄 CMS Page
+### `cms_page` — 📄 CMS-Seite
 
 tree (Seitenbaum)
 
@@ -47,9 +48,9 @@ tree (Seitenbaum)
 | `slug` | slug |  | ✓ | abgeleitet aus `title` |
 | `seo` | seo |  | ✓ |  |
 | `header` | rich_text |  | ✓ | Blöcke: `hero_slider`, `page_intro`, `statement_media_section` · max. 1 |
-| `sections` | rich_text |  | ✓ | Blöcke: `anchor`, `spacer_section`, `statement_media_section`, `content_with_media_section`, `sticky_scroll_section`, `tabs_with_media_section`, `text_columns_section`, `richtext_block`, `accordion`, `stats_section`, `facts_figures_section`, `pikto_section`, `media_block`, `media_slider_section`, `reference_teasers_section`, `available_models_section`, `teaser_collection_section`, `image_text_grid_section`, `collection_section`, `contact_cta`, `link_list`, `quote_section`, `hubspot_form_section`, `job_listing_section`, `locations_section`, `image_marquee`, `airflow_animation`, `solution_slider`, `product_detail_section`, `downloads_section`, `pcon_configurator_section`, `product_carousel_section`, `color_slider_section`, `content_tab_nav_section`, `flexible_image_section` |
+| `sections` | rich_text |  | ✓ | Blöcke: `anchor`, `spacer_section`, `statement_media_section`, `content_with_media_section`, `sticky_scroll_section`, `tabs_with_media_section`, `text_columns_section`, `richtext_block`, `accordion`, `stats_section`, `facts_figures_section`, `pikto_section`, `media_block`, `external_video_block`, `media_slider_section`, `reference_teasers_section`, `available_models_section`, `teaser_collection_section`, `image_text_grid_section`, `collection_section`, `contact_cta`, `link_list`, `quote_section`, `hubspot_form_section`, `job_listing_section`, `locations_section`, `image_marquee`, `airflow_animation`, `solution_slider`, `product_detail_section`, `downloads_section`, `pcon_configurator_section`, `product_carousel_section`, `color_slider_section`, `content_tab_nav_section`, `flexible_image_section` |
 
-### `solution` — 💡 Solution
+### `solution` — 💡 Geschäftsbereich
 
 collection · manuell sortierbar · Titel-Feld: `name`
 
@@ -59,7 +60,18 @@ collection · manuell sortierbar · Titel-Feld: `name`
 | `slug` | slug |  | ✓ | abgeleitet aus `name` |
 | `icon` | file |  |  |  |
 
-### `product` — 🛋️ Product
+### `product_family` — 🧩 Produktfamilie
+
+collection · manuell sortierbar · Titel-Feld: `label`
+
+| Feld | Typ | Pflicht | Lok | Details |
+| --- | --- | :-: | :-: | --- |
+| `label` | string | ✓ | ✓ |  |
+| `slug` | slug |  | ✓ | abgeleitet aus `label` |
+| `solution` | link | ✓ |  | → `solution` |
+| `page` | link |  |  | → `cms_page` — Die Produkt-Detailseite, auf der diese Familie vorgestellt wird. |
+
+### `product` — 🛋️ Produkt
 
 collection · manuell sortierbar · Titel-Feld: `name`
 
@@ -68,7 +80,8 @@ collection · manuell sortierbar · Titel-Feld: `name`
 | `name` | string | ✓ | ✓ |  |
 | `subtitle` | string |  | ✓ | Short tagline under the title, e.g. "Effizienter Kaltwassersatz" or "Für 1 Person". |
 | `slug` | slug |  | ✓ | abgeleitet aus `name` |
-| `solution` | link | ✓ |  | → `solution` |
+| `product_family` | link |  |  | → `product_family` — Die Familie, zu der dieses Produkt gehört — definiert auch den Geschäftsbereich. |
+| `solution` | link |  |  | → `solution` — DEPRECATED — der Geschäftsbereich ergibt sich neu aus der Produktfamilie. Feld wird nach der Umstellung entfernt. |
 | `teaser_image` | file |  |  |  |
 | `body` | structured_text |  | ✓ | Blöcke: `spec_table`, `download_item` · Record-Links: `cms_page`, `reference`, `product` · Headings: h3–h6 · Marks: strong, underline, strikethrough · Nodes: heading, list, link, blockquote |
 | `specs` | text |  |  | E.g. "Für 1 Person / Aussenmasse: … / Innenmasse: …" |
@@ -77,7 +90,7 @@ collection · manuell sortierbar · Titel-Feld: `name`
 | `gallery` | gallery |  |  |  |
 | `seo` | seo |  | ✓ |  |
 
-### `available_model` — 📦 Available model
+### `available_model` — 📦 Verfügbares Modell
 
 collection · manuell sortierbar · Titel-Feld: `name`
 
@@ -91,7 +104,7 @@ collection · manuell sortierbar · Titel-Feld: `name`
 | `specs` | rich_text |  | ✓ | Blöcke: `spec_table` — Attribute rows, e.g. Aussenfarbe: weiss / Stofffarbe: hellgrau / Bodenbelag: Teppich dunkel / ... |
 | `description` | structured_text |  | ✓ | Record-Links: `cms_page`, `reference`, `product` · Headings: h3–h6 · Marks: strong, underline, strikethrough · Nodes: heading, list, link, blockquote — Free text, e.g. condition, location, delivery note. |
 
-### `industry` — 🏭 Industry
+### `industry` — 🏭 Branche
 
 collection · Titel-Feld: `name`
 
@@ -100,7 +113,7 @@ collection · Titel-Feld: `name`
 | `name` | string | ✓ | ✓ |  |
 | `slug` | slug |  | ✓ | abgeleitet aus `name` |
 
-### `project_type` — 🏷️ Project Type
+### `project_type` — 🏷️ Raum- / Objekttyp
 
 collection · Titel-Feld: `name`
 
@@ -109,7 +122,7 @@ collection · Titel-Feld: `name`
 | `name` | string | ✓ | ✓ |  |
 | `slug` | slug |  | ✓ | abgeleitet aus `name` |
 
-### `project_kind` — 🔨 Project Kind
+### `project_kind` — 🔨 Projektart
 
 collection · Titel-Feld: `name`
 
@@ -118,7 +131,7 @@ collection · Titel-Feld: `name`
 | `name` | string | ✓ | ✓ |  |
 | `slug` | slug |  | ✓ | abgeleitet aus `name` |
 
-### `project_volume` — 💰 Project Volume
+### `project_volume` — 💰 Projektvolumen
 
 collection · manuell sortierbar · Titel-Feld: `name`
 
@@ -127,7 +140,7 @@ collection · manuell sortierbar · Titel-Feld: `name`
 | `name` | string | ✓ | ✓ |  |
 | `slug` | slug |  | ✓ | abgeleitet aus `name` |
 
-### `reference` — 🏗️ Reference
+### `reference` — 🏗️ Referenz
 
 collection · Titel-Feld: `title`
 
@@ -137,11 +150,12 @@ collection · Titel-Feld: `title`
 | `slug` | slug |  | ✓ | abgeleitet aus `title` |
 | `teaser_image` | file |  |  |  |
 | `intro` | text |  | ✓ | Lead paragraph of the generated reference header. |
-| **Fieldset «Reference attributes»** | | | | Drives the reference index filters and the attribute list in the header. |
+| **Fieldset «Referenz-Attribute»** | | | | Drives the reference index filters and the attribute list in the header. |
 | `project_types` | links |  |  | → `project_type` |
 | `industries` | links |  |  | → `industry` |
-| `solutions` | links |  |  | → `solution` |
-| `products` | links |  |  | → `product` — Products featured in this reference — keeps references↔products filterable. |
+| `product_families` | links |  |  | → `product_family` — Produktfamilien, die in dieser Referenz eingesetzt sind — definieren auch den Geschäftsbereich. |
+| `solutions` | links |  |  | → `solution` — DEPRECATED — der Geschäftsbereich ergibt sich neu aus den Produktfamilien. Feld wird nach der Umstellung entfernt. |
+| `products` | links |  |  | → `product` — DEPRECATED — Referenzen verlinken neu Produktfamilien statt einzelne Produkte. Feld wird nach der Umstellung entfernt. |
 | `project_kinds` | links |  |  | → `project_kind` — Neubau, Umbau, … — combinations allowed. |
 | `year` | integer |  |  | Year of completion. |
 | `volume` | link |  |  | → `project_volume` |
@@ -149,7 +163,7 @@ collection · Titel-Feld: `title`
 | `rating` | string |  |  | Werte: `1` · `2` · `3` — Internal editorial ranking — not shown on the website. |
 | `specs` | single_block | ✓ | ✓ | Free attribute rows rendered as a spec table at the end of the page, e.g. Architekt, Planer, Bauherrschaft. |
 | `seo` | seo |  | ✓ |  |
-| `sections` | rich_text |  | ✓ | Blöcke: `richtext_block`, `media_block` |
+| `sections` | rich_text |  | ✓ | Blöcke: `richtext_block`, `media_block`, `external_video_block` |
 
 ### `person` — 👤 Person
 
@@ -165,12 +179,12 @@ collection · Titel-Feld: `internal_label`
 | `contact_url` | string |  |  | Optional link for the contact slide, e.g. a booking or profile page. Full URL incl. {https://}. |
 | `portrait` | file |  |  |  |
 | `solution` | link |  |  | → `solution` — Main solution this person covers — filters the contact picker in the deck configurator. |
-| **Fieldset «Contact languages»** | | | | Languages this person can be contacted in. |
+| **Fieldset «Kontaktsprachen»** | | | | Languages this person can be contacted in. |
 | `lang_de` | boolean |  |  | Default: `true` |
 | `lang_en` | boolean |  |  |  |
 | `lang_fr` | boolean |  |  |  |
 
-### `location_type` — 🏷️ Location Type
+### `location_type` — 🏷️ Standort-Typ
 
 collection · manuell sortierbar · Titel-Feld: `name`
 
@@ -178,7 +192,7 @@ collection · manuell sortierbar · Titel-Feld: `name`
 | --- | --- | :-: | :-: | --- |
 | `name` | string | ✓ | ✓ | Tab label in the locations section, e.g. {Arbeitsplatzlösungen Showrooms}. |
 
-### `location` — 📍 Location
+### `location` — 📍 Standort
 
 collection · manuell sortierbar · Titel-Feld: `name`
 
@@ -199,7 +213,7 @@ collection · manuell sortierbar · Titel-Feld: `name`
 | `solutions` | links |  |  | → `solution` — Which product lines this location covers. Not filtered on — kept for later. |
 | `kind` | string |  |  | Werte: `showroom` · `partner` · Default: `showroom` — DEPRECATED — replaced by {Types} above and no longer rendered. Don't edit; the field will be deleted. |
 
-### `translation` — 🌐 Translation
+### `translation` — 🌐 Übersetzung
 
 collection · Titel-Feld: `key`
 
@@ -237,7 +251,7 @@ collection · manuell sortierbar
 | `target_path` | string |  |  |  |
 | `status_code` | string | ✓ |  | Werte: `301` · `302` |
 
-### `slide_deck` — 🎞️ Slide deck
+### `slide_deck` — 🎞️ Slide-Deck
 
 collection · manuell sortierbar · Titel-Feld: `title`
 
@@ -245,7 +259,7 @@ collection · manuell sortierbar · Titel-Feld: `title`
 | --- | --- | :-: | :-: | --- |
 | `title` | string | ✓ | ✓ |  |
 | `solution` | link |  |  | → `solution` — Groups the deck in the configurator picker. Leave empty for general decks. |
-| `slides` | gallery |  | ✓ | One image per slide, 16:9 {1920x1080px or larger}. Export from PowerPoint via Save As > PNG. |
+| `slides` | gallery |  | ✓ | One image per slide, 16:9 {1920x1080px or larger}. Export from PowerPoint via Save As, format PNG. |
 
 ## Blöcke
 
@@ -281,6 +295,7 @@ Einsatz: **Header** = erlaubt im `header`-Feld (genau 1 Block) · **Section** = 
 | `icon_element` | 🔣 Icon Element | Baustein |
 | `pikto_section` | 🔣 Pikto | Section |
 | `media_block` | 🖼️ Media Block | Section |
+| `external_video_block` | ▶️ External Video | Section |
 | `media_slider_slide` | 🖼️ Media Slider Slide | Baustein |
 | `media_slider_section` | 🎞️ Media Slider | Section |
 | `reference_teasers_section` | 🏗️ Reference Teasers | Section |
@@ -586,6 +601,17 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`, `reference
 | --- | --- | :-: | :-: | --- |
 | `media` | file | ✓ |  |  |
 | `layout` | string |  |  | Werte: `full_bleed` · `contained` · Default: `contained` |
+| `caption` | string |  |  |  |
+
+### `external_video_block` — ▶️ External Video
+
+block · Einsatz: Section (`home_page.sections`, `cms_page.sections`, `reference.sections`)
+
+| Feld | Typ | Pflicht | Lok | Details |
+| --- | --- | :-: | :-: | --- |
+| `video` | video | ✓ |  | Paste the normal watch URL, e.g. {https://www.youtube.com/watch?v=…} or {https://vimeo.com/…} — the preview image comes from the provider automatically. |
+| `layout` | string |  |  | Werte: `full_bleed` · `contained` · Default: `contained` |
+| `autoplay` | boolean |  |  | Starts muted and looping as soon as the video scrolls into view, instead of showing a play button. Note: loads the provider's player (and cookies) without a click. |
 | `caption` | string |  |  |  |
 
 ### `media_slider_slide` — 🖼️ Media Slider Slide
