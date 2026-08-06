@@ -558,6 +558,7 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`)
 | --- | --- | :-: | :-: | --- |
 | `heading` | string |  |  |  |
 | `items` | rich_text |  |  | Blöcke: `stat_item` |
+| `variant` | string |  |  | Werte: `standard` · `riotherm` · Default: `standard` |
 
 ### `fact_item` — 🔢 Fact
 
