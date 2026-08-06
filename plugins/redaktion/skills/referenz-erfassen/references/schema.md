@@ -36,7 +36,7 @@ singleton
 | `title` | string | ✓ | ✓ |  |
 | `seo` | seo |  | ✓ |  |
 | `header` | rich_text |  | ✓ | Blöcke: `hero_slider`, `page_intro`, `statement_media_section` · max. 1 |
-| `sections` | rich_text |  | ✓ | Blöcke: `anchor`, `spacer_section`, `statement_media_section`, `content_with_media_section`, `sticky_scroll_section`, `tabs_with_media_section`, `text_columns_section`, `richtext_block`, `accordion`, `stats_section`, `facts_figures_section`, `pikto_section`, `media_block`, `external_video_block`, `media_slider_section`, `reference_teasers_section`, `available_models_section`, `teaser_collection_section`, `image_text_grid_section`, `collection_section`, `contact_cta`, `link_list`, `quote_section`, `hubspot_form_section`, `job_listing_section`, `locations_section`, `image_marquee`, `airflow_animation`, `solution_slider`, `product_detail_section`, `downloads_section`, `pcon_configurator_section`, `product_carousel_section`, `color_slider_section`, `content_tab_nav_section`, `flexible_image_section` |
+| `sections` | rich_text |  | ✓ | Blöcke: `anchor`, `spacer_section`, `statement_media_section`, `content_with_media_section`, `sticky_scroll_section`, `tabs_with_media_section`, `text_columns_section`, `richtext_block`, `accordion`, `stats_section`, `facts_figures_section`, `pikto_section`, `media_block`, `external_video_block`, `media_slider_section`, `reference_teasers_section`, `available_models_section`, `teaser_collection_section`, `image_text_grid_section`, `collection_section`, `contact_cta`, `link_list`, `quote_section`, `quotes_slider_section`, `hubspot_form_section`, `job_listing_section`, `locations_section`, `image_marquee`, `airflow_animation`, `solution_slider`, `product_detail_section`, `downloads_section`, `pcon_configurator_section`, `product_carousel_section`, `color_slider_section`, `content_tab_nav_section`, `flexible_image_section` |
 
 ### `cms_page` — 📄 CMS-Seite
 
@@ -48,7 +48,7 @@ tree (Seitenbaum)
 | `slug` | slug |  | ✓ | abgeleitet aus `title` |
 | `seo` | seo |  | ✓ |  |
 | `header` | rich_text |  | ✓ | Blöcke: `hero_slider`, `page_intro`, `statement_media_section` · max. 1 |
-| `sections` | rich_text |  | ✓ | Blöcke: `anchor`, `spacer_section`, `statement_media_section`, `content_with_media_section`, `sticky_scroll_section`, `tabs_with_media_section`, `text_columns_section`, `richtext_block`, `accordion`, `stats_section`, `facts_figures_section`, `pikto_section`, `media_block`, `external_video_block`, `media_slider_section`, `reference_teasers_section`, `available_models_section`, `teaser_collection_section`, `image_text_grid_section`, `collection_section`, `contact_cta`, `link_list`, `quote_section`, `hubspot_form_section`, `job_listing_section`, `locations_section`, `image_marquee`, `airflow_animation`, `solution_slider`, `product_detail_section`, `downloads_section`, `pcon_configurator_section`, `product_carousel_section`, `color_slider_section`, `content_tab_nav_section`, `flexible_image_section` |
+| `sections` | rich_text |  | ✓ | Blöcke: `anchor`, `spacer_section`, `statement_media_section`, `content_with_media_section`, `sticky_scroll_section`, `tabs_with_media_section`, `text_columns_section`, `richtext_block`, `accordion`, `stats_section`, `facts_figures_section`, `pikto_section`, `media_block`, `external_video_block`, `media_slider_section`, `reference_teasers_section`, `available_models_section`, `teaser_collection_section`, `image_text_grid_section`, `collection_section`, `contact_cta`, `link_list`, `quote_section`, `quotes_slider_section`, `hubspot_form_section`, `job_listing_section`, `locations_section`, `image_marquee`, `airflow_animation`, `solution_slider`, `product_detail_section`, `downloads_section`, `pcon_configurator_section`, `product_carousel_section`, `color_slider_section`, `content_tab_nav_section`, `flexible_image_section` |
 
 ### `solution` — 💡 Geschäftsbereich
 
@@ -73,19 +73,19 @@ collection · manuell sortierbar · Titel-Feld: `label`
 
 ### `product` — 🛋️ Produkt
 
-collection · manuell sortierbar · Titel-Feld: `name`
+collection · Titel-Feld: `name`
 
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
 | `name` | string | ✓ | ✓ |  |
-| `subtitle` | string |  | ✓ | Short tagline under the title, e.g. "Effizienter Kaltwassersatz" or "Für 1 Person". |
+| `subtitle` | string |  | ✓ | Kurze Zeile unter dem Titel, z. B. {Effizienter Kaltwassersatz} oder {Für 1 Person}. |
 | `slug` | slug |  | ✓ | abgeleitet aus `name` |
 | `product_family` | link |  |  | → `product_family` — Die Familie, zu der dieses Produkt gehört — definiert auch den Geschäftsbereich. |
 | `solution` | link |  |  | → `solution` — DEPRECATED — der Geschäftsbereich ergibt sich neu aus der Produktfamilie. Feld wird nach der Umstellung entfernt. |
 | `teaser_image` | file |  |  |  |
 | `body` | structured_text |  | ✓ | Blöcke: `spec_table`, `download_item` · Record-Links: `cms_page`, `reference`, `product` · Headings: h3–h6 · Marks: strong, underline, strikethrough · Nodes: heading, list, link, blockquote |
-| `specs` | text |  |  | E.g. "Für 1 Person / Aussenmasse: … / Innenmasse: …" |
-| `links` | rich_text |  |  | Blöcke: `nav_link` — Optional inline links, e.g. "Verfügbare Modelle", "Konfigurator". |
+| `specs` | text |  |  | Z. B. {Für 1 Person / Aussenmasse: … / Innenmasse: …} |
+| `links` | rich_text |  |  | Blöcke: `nav_link` — Optionale Links im Text, z. B. {Verfügbare Modelle} oder {Konfigurator}. |
 | `accordion_items` | rich_text |  |  | Blöcke: `accordion_item` |
 | `gallery` | gallery |  |  |  |
 | `seo` | seo |  | ✓ |  |
@@ -96,13 +96,13 @@ collection · manuell sortierbar · Titel-Feld: `name`
 
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
-| `name` | string |  | ✓ | Optional — defaults to the linked product's name if left empty. |
+| `name` | string |  | ✓ | Optional — leer lassen: es gilt der Name des verlinkten Produkts. |
 | `product` | link | ✓ |  | → `product` |
-| `external_id` | string |  |  | E.g. an ERP/Dualoo article number. Written into the request form's hidden "talky_produkt_id" field when this model's CTA is clicked. |
-| `teaser_image` | file |  |  | Optional — defaults to the linked product's teaser image if left empty. |
+| `external_id` | string |  |  | Z. B. eine ERP- oder Dualoo-Artikelnummer. Wird beim Klick auf den CTA dieses Modells in das versteckte Feld {talky_produkt_id} des Anfrageformulars geschrieben. |
+| `teaser_image` | file |  |  | Optional — leer lassen: es gilt das Teaser-Bild des verlinkten Produkts. |
 | `gallery` | gallery |  |  |  |
-| `specs` | rich_text |  | ✓ | Blöcke: `spec_table` — Attribute rows, e.g. Aussenfarbe: weiss / Stofffarbe: hellgrau / Bodenbelag: Teppich dunkel / ... |
-| `description` | structured_text |  | ✓ | Record-Links: `cms_page`, `reference`, `product` · Headings: h3–h6 · Marks: strong, underline, strikethrough · Nodes: heading, list, link, blockquote — Free text, e.g. condition, location, delivery note. |
+| `specs` | rich_text |  | ✓ | Blöcke: `spec_table` — Attributzeilen, z. B. Aussenfarbe: weiss / Stofffarbe: hellgrau / Bodenbelag: Teppich dunkel / … |
+| `description` | structured_text |  | ✓ | Record-Links: `cms_page`, `reference`, `product` · Headings: h3–h6 · Marks: strong, underline, strikethrough · Nodes: heading, list, link, blockquote — Freitext, z. B. Zustand, Standort, Lieferhinweis. |
 
 ### `industry` — 🏭 Branche
 
@@ -149,19 +149,20 @@ collection · Titel-Feld: `title`
 | `title` | string | ✓ | ✓ |  |
 | `slug` | slug |  | ✓ | abgeleitet aus `title` |
 | `teaser_image` | file |  |  |  |
-| `intro` | text |  | ✓ | Lead paragraph of the generated reference header. |
-| **Fieldset «Referenz-Attribute»** | | | | Drives the reference index filters and the attribute list in the header. |
+| `intro` | text |  | ✓ | Lead-Absatz im generierten Referenz-Header. |
+| **Fieldset «Referenz-Attribute»** | | | | Steuert die Filter in der Referenzübersicht und die Attributliste im Header. |
 | `project_types` | links |  |  | → `project_type` |
 | `industries` | links |  |  | → `industry` |
 | `product_families` | links |  |  | → `product_family` — Produktfamilien, die in dieser Referenz eingesetzt sind — definieren auch den Geschäftsbereich. |
 | `solutions` | links |  |  | → `solution` — DEPRECATED — der Geschäftsbereich ergibt sich neu aus den Produktfamilien. Feld wird nach der Umstellung entfernt. |
 | `products` | links |  |  | → `product` — DEPRECATED — Referenzen verlinken neu Produktfamilien statt einzelne Produkte. Feld wird nach der Umstellung entfernt. |
-| `project_kinds` | links |  |  | → `project_kind` — Neubau, Umbau, … — combinations allowed. |
-| `year` | integer |  |  | Year of completion. |
+| `project_kinds` | links |  |  | → `project_kind` — Neubau, Umbau, … — Kombinationen möglich. |
+| `year` | integer |  |  | Jahr der Fertigstellung. |
 | `volume` | link |  |  | → `project_volume` |
-| `location` | string |  | ✓ | Free text, e.g. {Zürich}. |
-| `rating` | string |  |  | Werte: `1` · `2` · `3` — Internal editorial ranking — not shown on the website. |
-| `specs` | single_block | ✓ | ✓ | Free attribute rows rendered as a spec table at the end of the page, e.g. Architekt, Planer, Bauherrschaft. |
+| `location` | string |  | ✓ | Freitext, z. B. {Zürich}. |
+| `rating` | string |  |  | Werte: `1` · `2` · `3` — Interne redaktionelle Bewertung — erscheint nicht auf der Website. |
+| `specs` | single_block | ✓ | ✓ | Freie Attributzeilen, die am Seitenende als Tabelle erscheinen, z. B. Architekt, Planer, Bauherrschaft. |
+| `related_references` | links |  |  | → `reference` — Optional. Leer lassen — verwandte Referenzen werden automatisch aus den Attributen ermittelt. Hier gesetzte Referenzen stehen zuoberst, der Rest wird automatisch aufgefüllt (max. 3 Karten). |
 | `seo` | seo |  | ✓ |  |
 | `sections` | rich_text |  | ✓ | Blöcke: `richtext_block`, `media_block`, `external_video_block` |
 
@@ -171,15 +172,15 @@ collection · Titel-Feld: `internal_label`
 
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
-| `internal_label` | string | ✓ |  | Editor-only title for this record, shown in listings and pickers. |
+| `internal_label` | string | ✓ |  | Nur für die Redaktion: Titel dieses Datensatzes in Listen und Auswahlfeldern. |
 | `name` | string | ✓ |  |  |
 | `role` | string |  | ✓ |  |
-| `phone` | string |  |  | International format, e.g. {+41 71 644 88 88} — rendered as a tel: link. |
-| `email` | string |  |  | Personal or team address, e.g. {vorname.nachname@erichkeller.com} — rendered as a mailto: link. |
-| `contact_url` | string |  |  | Optional link for the contact slide, e.g. a booking or profile page. Full URL incl. {https://}. |
+| `phone` | string |  |  | Internationales Format, z. B. {+41 71 644 88 88} — wird als tel:-Link ausgegeben. |
+| `email` | string |  |  | Persönliche oder Team-Adresse, z. B. {vorname.nachname@erichkeller.com} — wird als mailto:-Link ausgegeben. |
+| `contact_url` | string |  |  | Optionaler Link für den Kontakt-Slide, z. B. eine Buchungs- oder Profilseite. Vollständige URL inkl. {https://}. |
 | `portrait` | file |  |  |  |
-| `solution` | link |  |  | → `solution` — Main solution this person covers — filters the contact picker in the deck configurator. |
-| **Fieldset «Kontaktsprachen»** | | | | Languages this person can be contacted in. |
+| `solution` | link |  |  | → `solution` — Hauptgeschäftsbereich dieser Person — filtert die Kontaktauswahl im Deck-Konfigurator. |
+| **Fieldset «Kontaktsprachen»** | | | | Sprachen, in denen diese Person kontaktiert werden kann. |
 | `lang_de` | boolean |  |  | Default: `true` |
 | `lang_en` | boolean |  |  |  |
 | `lang_fr` | boolean |  |  |  |
@@ -190,7 +191,7 @@ collection · manuell sortierbar · Titel-Feld: `name`
 
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
-| `name` | string | ✓ | ✓ | Tab label in the locations section, e.g. {Arbeitsplatzlösungen Showrooms}. |
+| `name` | string | ✓ | ✓ | Tab-Label in der Standort-Section, z. B. {Arbeitsplatzlösungen Showrooms}. |
 
 ### `location` — 📍 Standort
 
@@ -199,19 +200,19 @@ collection · manuell sortierbar · Titel-Feld: `name`
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
 | `name` | string | ✓ |  |  |
-| `types` | links | ✓ |  | → `location_type` — Which groups this location is listed under. Pick several when it belongs in more than one tab. |
-| `image` | file |  |  | Interior shot for a showroom, company logo for a partner. |
-| `street` | string |  |  | e.g. {Romanshornstrasse 17} |
-| `postal_code` | string |  |  | e.g. {8583} |
-| `city` | string |  |  | e.g. {Sulgen} |
-| `country` | string |  | ✓ | Only for locations abroad — leave empty for Swiss addresses. e.g. {Niederlande}. |
-| `phone` | string |  |  | International format, e.g. {+41 71 644 88 88} — rendered as a tel: link. |
-| `email` | string |  |  | Optional address for this location, e.g. {info@partner.ch} — rendered as a mailto: link. |
-| `website_url` | string |  |  | Optional link to this location's own site (mainly for partners). Full URL incl. {https://}. |
-| `coordinates` | lat_lon |  |  | The map pin. Search the address, then drag the pin to fine-tune it. |
-| `directions_url` | string |  |  | Optional, full URL incl. {https://}. Leave empty to link to Google Maps directions for the address above. |
-| `solutions` | links |  |  | → `solution` — Which product lines this location covers. Not filtered on — kept for later. |
-| `kind` | string |  |  | Werte: `showroom` · `partner` · Default: `showroom` — DEPRECATED — replaced by {Types} above and no longer rendered. Don't edit; the field will be deleted. |
+| `types` | links | ✓ |  | → `location_type` — Unter welchen Gruppen dieser Standort erscheint. Mehrere wählen, wenn er in mehr als einen Tab gehört. |
+| `image` | file |  |  | Innenaufnahme bei einem Showroom, Firmenlogo bei einem Partner. |
+| `street` | string |  |  | z. B. {Romanshornstrasse 17} |
+| `postal_code` | string |  |  | z. B. {8583} |
+| `city` | string |  |  | z. B. {Sulgen} |
+| `country` | string |  | ✓ | Nur für Standorte im Ausland — bei Schweizer Adressen leer lassen. Z. B. {Niederlande}. |
+| `phone` | string |  |  | Internationales Format, z. B. {+41 71 644 88 88} — wird als tel:-Link ausgegeben. |
+| `email` | string |  |  | Optionale Adresse für diesen Standort, z. B. {info@partner.ch} — wird als mailto:-Link ausgegeben. |
+| `website_url` | string |  |  | Optionaler Link auf die eigene Website dieses Standorts (vor allem bei Partnern). Vollständige URL inkl. {https://}. |
+| `coordinates` | lat_lon |  |  | Der Kartenpunkt. Adresse suchen, danach den Pin für die Feinjustierung verschieben. |
+| `directions_url` | string |  |  | Optional, vollständige URL inkl. {https://}. Leer lassen: es wird auf die Google-Maps-Route zur obigen Adresse verlinkt. |
+| `solutions` | links |  |  | → `solution` — Welche Geschäftsbereiche dieser Standort abdeckt. Wird noch nicht gefiltert — für später erfasst. |
+| `kind` | string |  |  | Werte: `showroom` · `partner` · Default: `showroom` — DEPRECATED — ersetzt durch {Typen} oben und wird nicht mehr ausgegeben. Nicht bearbeiten; das Feld wird gelöscht. |
 
 ### `translation` — 🌐 Übersetzung
 
@@ -229,9 +230,9 @@ singleton
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
 | `label` | string |  | ✓ |  |
-| `reference_parent` | link |  |  | → `cms_page` — References are published under this page: {parent-path}/{reference-slug}. Their URLs and sitemap entries depend on it. |
-| `job_parent` | link |  |  | → `cms_page` — Job pages (from the Dualoo feed) are published under this page: {parent-path}/{job-slug}. |
-| `contact_page` | link |  |  | → `cms_page` — Global contact/form page — the fallback target for Contact CTA buttons without an own contact page. |
+| `reference_parent` | link |  |  | → `cms_page` — Referenzen werden unter dieser Seite publiziert: {pfad-der-seite}/{referenz-slug}. Ihre URLs und Sitemap-Einträge hängen davon ab. |
+| `job_parent` | link |  |  | → `cms_page` — Jobseiten (aus dem Dualoo-Feed) werden unter dieser Seite publiziert: {pfad-der-seite}/{job-slug}. |
+| `contact_page` | link |  |  | → `cms_page` — Globale Kontakt- bzw. Formularseite — Ziel für alle Contact-CTA-Buttons ohne eigene Kontaktseite. |
 | `header_navigation` | rich_text |  | ✓ | Blöcke: `menu_group` |
 | `footer_info` | structured_text |  | ✓ | Record-Links: `cms_page`, `reference`, `product` · Headings:  · Marks: strong, underline, strikethrough · Nodes: list, link |
 | `footer_navigation` | rich_text |  | ✓ | Blöcke: `menu_group` |
@@ -258,8 +259,8 @@ collection · manuell sortierbar · Titel-Feld: `title`
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
 | `title` | string | ✓ | ✓ |  |
-| `solution` | link |  |  | → `solution` — Groups the deck in the configurator picker. Leave empty for general decks. |
-| `slides` | gallery |  | ✓ | One image per slide, 16:9 {1920x1080px or larger}. Export from PowerPoint via Save As, format PNG. |
+| `solution` | link |  |  | → `solution` — Gruppiert das Deck in der Auswahl des Konfigurators. Leer lassen für allgemeine Decks. |
+| `slides` | gallery |  | ✓ | Ein Bild pro Slide, 16:9 {1920x1080px oder grösser}. Aus PowerPoint über Speichern unter, Format PNG, exportieren. |
 
 ## Blöcke
 
@@ -308,6 +309,7 @@ Einsatz: **Header** = erlaubt im `header`-Feld (genau 1 Block) · **Section** = 
 | `contact_cta` | 📞 Contact CTA | Section |
 | `link_list` | 🔗 Link List | Section |
 | `quote_section` | ❝ Quote | Section |
+| `quotes_slider_section` | ❝ Quotes Slider | Section |
 | `hubspot_form_section` | HubSpot Form | Section |
 | `job_listing_section` | 💼 Job Listing | Section |
 | `locations_section` | 📍 Locations | Section |
@@ -335,9 +337,9 @@ block · Einsatz: Baustein (`product.links`, `website.legal_links`, `hero_slide.
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
 | `label` | string | ✓ |  |  |
-| `page` | link |  |  | → `cms_page`, `home_page`, `reference` — Pick a page OR fill the external URL below — not both. |
+| `page` | link |  |  | → `cms_page`, `home_page`, `reference` — Entweder eine Seite wählen ODER unten die externe URL ausfüllen — nicht beides. |
 | `external_url` | string |  |  |  |
-| `anchor` | string |  |  | Optional anchor on the target page, without leading {#} — e.g. {oeffnungszeiten}. |
+| `anchor` | string |  |  | Optionaler Anker auf der Zielseite. Die Auswahl zeigt die Anker der verlinkten Seite; von Hand eingetippt ohne {#}, z. B. {oeffnungszeiten}. |
 
 ### `menu_link` — 🧭 Menu Link
 
@@ -346,10 +348,10 @@ block · Einsatz: Baustein (`menu_group.overview_link`, `menu_group.items`)
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
 | `label` | string | ✓ |  |  |
-| `page` | link |  |  | → `cms_page`, `home_page`, `reference` — Pick a page OR fill the external URL below — not both. |
+| `page` | link |  |  | → `cms_page`, `home_page`, `reference` — Entweder eine Seite wählen ODER unten die externe URL ausfüllen — nicht beides. |
 | `external_url` | string |  |  |  |
-| `anchor` | string |  |  | Optional #anchor on the target page. |
-| `image` | file |  |  | Optional. Shown on hover in the header mega-menu. |
+| `anchor` | string |  |  | Optionaler Anker auf der Zielseite, ohne führendes {#} — z. B. {oeffnungszeiten}. |
+| `image` | file |  |  | Optional. Erscheint beim Hover im Mega-Menü des Headers. |
 
 ### `menu_group` — 🧭 Menu Group
 
@@ -358,7 +360,7 @@ block · Einsatz: Baustein (`website.header_navigation`, `website.footer_navigat
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
 | `label` | string | ✓ |  |  |
-| `overview_link` | rich_text |  |  | Blöcke: `menu_link` · max. 1 — Optional. The group's landing page (the "Zur Übersicht" row). |
+| `overview_link` | rich_text |  |  | Blöcke: `menu_link` · max. 1 — Optional. Die Übersichtsseite der Gruppe (die Zeile {Zur Übersicht}). |
 | `items` | rich_text |  |  | Blöcke: `menu_link`, `menu_group` |
 
 ### `anchor` — ⚓ Anchor
@@ -367,7 +369,7 @@ block · Titel-Feld: `anchor_id` · Einsatz: Section (`home_page.sections`, `cms
 
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
-| `anchor_id` | string | ✓ |  | Kleinbuchstaben, Zahlen, Bindestriche — z.B. "oeffnungszeiten". Achtung: nachträgliches Umbenennen bricht bestehende Links auf diesen Anker. |
+| `anchor_id` | string | ✓ |  | Kleinbuchstaben, Zahlen, Bindestriche — z. B. {oeffnungszeiten}. Achtung: nachträgliches Umbenennen bricht bestehende Links auf diesen Anker. |
 
 ### `spacer_section` — ↕️ Spacer
 
@@ -376,7 +378,7 @@ block · Titel-Feld: `size` · Einsatz: Section (`home_page.sections`, `cms_page
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
 | `size` | string |  |  | Werte: `medium` · `large` · Default: `medium` — Zusätzlicher Abstand zum nächsten Abschnitt. |
-| `background` | string |  |  | Werte: `auto` · `white` · `grey` · Default: `auto` — {auto} takes the colour of the next section and never splits a band; {white}/{grey} force the gap's colour. |
+| `background` | string |  |  | Werte: `auto` · `white` · `grey` · Default: `auto` — Weiss/Grau erzwingen die Farbe des Abstands. |
 
 ### `hero_slide` — 🖼️ Hero Slide
 
@@ -402,13 +404,13 @@ block · Einsatz: Header (`home_page.header`, `cms_page.header`)
 
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
-| `heading` | string |  |  | Optional heading shown above the lead text. |
+| `heading` | string |  |  | Optionale Überschrift über dem Lead-Text. |
 | `lead` | text |  |  |  |
-| `logo` | string |  |  | Werte: `none` · `talky` · `riotherm` · Default: `none` — Optional brand logo shown above the title. |
-| `background` | string |  |  | Werte: `white` · `grey` · Default: `white` — Band background. Consecutive blocks of the same colour merge into one band. |
+| `logo` | string |  |  | Werte: `none` · `talky` · `riotherm` · Default: `none` — Optionales Marken-Logo über dem Titel. |
+| `background` | string |  |  | Werte: `white` · `grey` · Default: `white` — Hintergrund des Farbbands. Aufeinanderfolgende Blöcke mit derselben Farbe verschmelzen zu einem Band. |
 | `link` | rich_text |  |  | Blöcke: `nav_link` · max. 1 |
-| `gallery` | gallery |  |  | Optional contained media (~12:7). A single item renders like the old single image; multiple items render as a slider with the same spacing. |
-| `autoplay` | boolean |  |  | Default: `true` — Auto-advance the media slider. Only relevant when the gallery has more than one item; off means slides change on manual navigation only. |
+| `gallery` | gallery |  |  | Optionale Medien im Satzspiegel (ca. 12:7). Ein einzelner Eintrag erscheint als einzelnes Bild, mehrere Einträge als Slider mit denselben Abständen. |
+| `autoplay` | boolean |  |  | Default: `true` — Schaltet den Medien-Slider automatisch weiter. Nur relevant, wenn die Galerie mehr als einen Eintrag hat; aus heisst: nur manuelle Navigation. |
 
 ### `statement_media_section` — 💬 Statement Media
 
@@ -426,12 +428,12 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`)
 
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
-| `kicker` | string |  |  | Optional second title line, e.g. "Der Design Tisch". |
+| `kicker` | string |  |  | Optionale zweite Titelzeile, z. B. {Der Design Tisch}. |
 | `heading` | string | ✓ |  |  |
-| `body` | structured_text |  |  | Blöcke: `spec_table` · Record-Links: `cms_page`, `reference`, `product` · Headings: h3–h6 · Marks: strong, underline, strikethrough · Nodes: heading, list, link, blockquote — Format a paragraph as a quote to render it as large lead text. |
-| `links` | rich_text |  |  | Blöcke: `nav_link` · max. 1 — A single link. Choose its appearance below. |
-| `link_style` | string |  |  | Werte: `link` · `cta` · Default: `link` — "link" = inline text with arrow, "cta" = solid button. |
-| `media` | file | ✓ |  | Roughly square. Videos play muted/autoplay without controls. |
+| `body` | structured_text |  |  | Blöcke: `spec_table` · Record-Links: `cms_page`, `reference`, `product` · Headings: h3–h6 · Marks: strong, underline, strikethrough · Nodes: heading, list, link, blockquote — Ein Absatz im Zitat-Format wird als grosser Lead-Text ausgegeben. |
+| `links` | rich_text |  |  | Blöcke: `nav_link` · max. 1 — Ein einzelner Link. Das Erscheinungsbild wird unten gewählt. |
+| `link_style` | string |  |  | Werte: `link` · `cta` · Default: `link` |
+| `media` | file | ✓ |  | Ungefähr quadratisch. Videos laufen stumm und automatisch, ohne Bedienelemente. |
 | `media_position` | string |  |  | Werte: `left` · `right` · Default: `right` |
 | `background` | string |  |  | Werte: `white` · `grey` · Default: `white` |
 
@@ -441,10 +443,10 @@ block · Einsatz: Baustein (`sticky_scroll_section.entries`)
 
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
-| `year` | string |  |  | Optional milestone year, e.g. "2025". |
+| `year` | string |  |  | Optionale Jahreszahl, z. B. {2025}. |
 | `heading` | string | ✓ |  |  |
 | `body` | structured_text |  |  | Blöcke: `spec_table` · Record-Links: `cms_page`, `reference`, `product` · Headings: h3–h6 · Marks: strong, underline, strikethrough · Nodes: heading, list, link, blockquote |
-| `media` | file | ✓ |  | Shown in the sticky column while this entry is in view. |
+| `media` | file | ✓ |  | Erscheint in der Sticky-Spalte, solange dieser Eintrag im Blickfeld ist. |
 
 ### `sticky_scroll_section` — 📜 Sticky Scroll Text-Media
 
@@ -546,7 +548,7 @@ block · Einsatz: Baustein (`stats_section.items`)
 | `value` | string | ✓ |  |  |
 | `caption` | string |  |  |  |
 | `text` | structured_text |  |  | Record-Links: `cms_page`, `reference`, `product` · Headings:  · Marks: strong, underline, strikethrough · Nodes: link |
-| `color` | string |  |  | Werte: `black` · `green` · `blue` · `red` · Default: `green` — Accent colour of the big value. |
+| `color` | string |  |  | Werte: `black` · `green` · `blue` · `red` · Default: `green` — Akzentfarbe der grossen Zahl. |
 
 ### `stats_section` — 📊 Stats
 
@@ -580,7 +582,7 @@ block · Einsatz: Baustein (`pikto_section.items`)
 
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
-| `icon` | file |  |  | Monochrome line icon (SVG), ~64×64. |
+| `icon` | file |  |  | Einfarbiges Linien-Icon (SVG), ca. 64×64. |
 | `title` | string | ✓ |  |  |
 | `text` | structured_text |  |  | Record-Links: `cms_page`, `reference`, `product` · Headings:  · Marks: strong, underline, strikethrough · Nodes: link |
 
@@ -609,9 +611,9 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`, `reference
 
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
-| `video` | video | ✓ |  | Paste the normal watch URL, e.g. {https://www.youtube.com/watch?v=…} or {https://vimeo.com/…} — the preview image comes from the provider automatically. |
+| `video` | video | ✓ |  | Normale Watch-URL einfügen, z. B. {https://www.youtube.com/watch?v=…} oder {https://vimeo.com/…} — das Vorschaubild kommt automatisch vom Anbieter. |
 | `layout` | string |  |  | Werte: `full_bleed` · `contained` · Default: `contained` |
-| `autoplay` | boolean |  |  | Starts muted and looping as soon as the video scrolls into view, instead of showing a play button. Note: loads the provider's player (and cookies) without a click. |
+| `autoplay` | boolean |  |  | Startet stumm und in Schleife, sobald das Video ins Blickfeld scrollt, statt einen Play-Button zu zeigen. Achtung: lädt den Player des Anbieters (und dessen Cookies) ohne Klick. |
 | `caption` | string |  |  |  |
 
 ### `media_slider_slide` — 🖼️ Media Slider Slide
@@ -630,7 +632,7 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`)
 | --- | --- | :-: | :-: | --- |
 | `slides` | rich_text |  |  | Blöcke: `media_slider_slide` |
 | `autoplay` | boolean |  |  | Default: `true` |
-| `autoplay_duration` | integer |  |  | Default: `6` — Seconds each slide stays before auto-advancing (video slides run at least their own duration). |
+| `autoplay_duration` | integer |  |  | Default: `6` — Sekunden, die ein Slide stehen bleibt, bevor automatisch weitergeschaltet wird (Video-Slides laufen mindestens ihre eigene Dauer). |
 
 ### `reference_teasers_section` — 🏗️ Reference Teasers
 
@@ -641,7 +643,7 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`)
 | `heading` | string |  |  |  |
 | `intro` | text |  |  |  |
 | `link` | rich_text |  |  | Blöcke: `nav_link` · max. 1 |
-| `references` | links |  |  | → `reference` — Leave empty to show the latest references. |
+| `references` | links |  |  | → `reference` — Leer lassen, um automatisch die neusten Referenzen zu zeigen. |
 | `layout` | string |  |  | Werte: `editorial_rows` · `grid_3` · `grid_2` · `slider` · Default: `editorial_rows` |
 
 ### `available_models_section` — 📦 Available models
@@ -652,10 +654,10 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`)
 | --- | --- | :-: | :-: | --- |
 | `heading` | string |  |  |  |
 | `intro` | text |  |  |  |
-| `products` | links |  |  | → `product` — Optional — restrict to specific products. Leave empty to show all. |
-| `solutions` | links |  |  | → `solution` — Optional — restrict to available models whose product belongs to these solutions. Leave empty to show all. |
+| `products` | links |  |  | → `product` — Optional — nur diese Produkte zeigen. Leer lassen für alle. |
+| `solutions` | links |  |  | → `solution` — Optional — nur Modelle zeigen, deren Produkt zu diesen Geschäftsbereichen gehört. Leer lassen für alle. |
 | `layout` | string |  |  | Werte: `editorial_rows` · `grid_3` · `grid_2` · `slider` · Default: `grid_3` |
-| `form` | rich_text |  |  | Blöcke: `hubspot_form_section` · max. 1 — Rendered once, below every model row — each model's CTA scrolls to it. |
+| `form` | rich_text |  |  | Blöcke: `hubspot_form_section` · max. 1 — Erscheint einmal unter allen Modellzeilen — der CTA jedes Modells scrollt dorthin. |
 
 ### `teaser_link` — 🧲 Teaser Link
 
@@ -663,12 +665,12 @@ block · Einsatz: Baustein (`teaser_collection_section.items`)
 
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
-| `page` | link |  |  | → `cms_page`, `home_page`, `reference` — Pick a page OR fill the external URL below — not both. |
+| `page` | link |  |  | → `cms_page`, `home_page`, `reference` — Entweder eine Seite wählen ODER unten die externe URL ausfüllen — nicht beides. |
 | `external_url` | string |  |  |  |
-| `anchor` | string |  |  | Optional #anchor on the target page. |
-| `title` | string |  |  | Defaults to the linked target's title. |
-| `text` | text |  |  | Optional short description shown under the title. |
-| `image` | file |  |  | Defaults to the linked target's teaser image. |
+| `anchor` | string |  |  | Optionaler Anker auf der Zielseite, ohne führendes {#} — z. B. {oeffnungszeiten}. |
+| `title` | string |  |  | Leer lassen: es gilt der Titel des verlinkten Ziels. |
+| `text` | text |  |  | Optionaler Kurztext unter dem Titel. |
+| `image` | file |  |  | Leer lassen: es gilt das Teaser-Bild des verlinkten Ziels. |
 
 ### `teaser_collection_section` — 🧲 Teaser Collection
 
@@ -711,8 +713,8 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`)
 | --- | --- | :-: | :-: | --- |
 | `heading` | string |  |  |  |
 | `intro` | text |  |  |  |
-| `source` | string | ✓ |  | Werte: `references` · Default: `references` — Which collection to list. More sources can be added later. |
-| `show_filters` | boolean |  |  | Default: `true` — Render the visitor-facing facet filters above the list. |
+| `source` | string | ✓ |  | Werte: `references` · Default: `references` — Welche Sammlung aufgelistet wird. Weitere Quellen können später dazukommen. |
+| `show_filters` | boolean |  |  | Default: `true` — Blendet die Filterleiste über der Liste ein. |
 
 ### `contact_cta` — 📞 Contact CTA
 
@@ -723,8 +725,8 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`)
 | `heading` | string | ✓ |  |  |
 | `subline` | string |  |  |  |
 | `person` | link |  |  | → `person` |
-| `contact_page` | link |  |  | → `cms_page` — Target page for the CTA button, e.g. the contact form. Empty: falls back to the global contact page from the Website settings. |
-| `background` | string |  |  | Werte: `white` · `black` · Default: `white` — white: light section · black: inverted dark section. |
+| `contact_page` | link |  |  | → `cms_page` — Zielseite des CTA-Buttons, z. B. das Kontaktformular. Leer: es gilt die globale Kontaktseite aus den Website-Einstellungen. |
+| `background` | string |  |  | Werte: `white` · `black` · Default: `white` |
 
 ### `link_list` — 🔗 Link List
 
@@ -739,12 +741,20 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`)
 
 ### `quote_section` — ❝ Quote
 
-block · Einsatz: Section (`home_page.sections`, `cms_page.sections`)
+block · Einsatz: Section (`home_page.sections`, `cms_page.sections`, `quotes_slider_section.quotes`)
 
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
 | `quote` | text | ✓ |  |  |
 | `attribution` | string |  |  |  |
+
+### `quotes_slider_section` — ❝ Quotes Slider
+
+block · Einsatz: Section (`home_page.sections`, `cms_page.sections`)
+
+| Feld | Typ | Pflicht | Lok | Details |
+| --- | --- | :-: | :-: | --- |
+| `quotes` | rich_text | ✓ |  | Blöcke: `quote_section` · max. 5 — 1–5 Zitate, einzeln nacheinander gezeigt; beim Scrollen durch die Section wird zum nächsten Zitat übergeblendet. |
 
 ### `hubspot_form_section` — HubSpot Form
 
@@ -762,8 +772,8 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`)
 | --- | --- | :-: | :-: | --- |
 | `heading` | string |  |  |  |
 | `text` | structured_text |  |  | Record-Links: `cms_page`, `reference`, `product` · Headings:  · Marks: strong, underline, strikethrough · Nodes: link |
-| `link` | rich_text |  |  | Blöcke: `nav_link` · max. 1 |
-| `empty_note` | string |  |  | Shown instead of the list when no jobs are published. |
+| `link` | rich_text |  |  | Blöcke: `nav_link` · max. 1 — Mit Link (z. B. auf die vollständige Jobseite) wird der Block zum Teaser: Es erscheinen nur die 3 neusten Jobs. Ohne Link werden alle offenen Stellen gelistet. |
+| `empty_note` | string |  |  | Erscheint statt der Liste, wenn keine Jobs publiziert sind. |
 
 ### `locations_section` — 📍 Locations
 
@@ -773,7 +783,7 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`)
 | --- | --- | :-: | :-: | --- |
 | `heading` | string |  |  |  |
 | `intro` | text |  |  |  |
-| `types` | links |  |  | → `location_type` — Limit the section to these groups — they also become its tabs. Leave empty to list every location. |
+| `types` | links |  |  | → `location_type` — Beschränkt die Section auf diese Gruppen — sie werden auch zu den Tabs. Leer lassen, um alle Standorte zu listen. |
 
 ### `image_marquee` — 🎞️ Image Marquee
 
@@ -782,7 +792,7 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`)
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
 | `image` | file | ✓ |  |  |
-| `marquee_texts` | text |  |  | One phrase per line. |
+| `marquee_texts` | text |  |  | Ein Begriff pro Zeile. |
 
 ### `airflow_animation` — 🌬️ Airflow Animation
 
@@ -790,7 +800,7 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`)
 
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
-| `anchor` | string |  |  | Werte: `up` · `center` · `down` · Default: `up` — Bleed direction out of the 0px anchor. |
+| `anchor` | string |  |  | Werte: `up` · `center` · `down` · Default: `up` — In welche Richtung die Animation aus ihrem 0px hohen Anker herausragt. |
 
 ### `solution_slide` — 🧩 Solution Slide
 
@@ -818,10 +828,10 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`)
 
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
-| `heading` | string |  |  | Optional section title, e.g. "Grössen im Überblick". Stacked: above the product nav. Tabs: centered display title on the grey band. |
-| `subtitle` | string |  |  | Optional line under the heading, e.g. "Für moderne Kontrollraumarbeitsplätze". Only shown in the Tabs variant. |
-| `intro` | text |  |  | Optional short intro paragraph under the subtitle. Only shown in the Tabs variant. |
-| `variant` | string |  |  | Werte: `stacked` · `plain` · `tabs` · Default: `stacked` — Stacked: sticky product nav + all products below each other. Plain: all products below each other, no nav. Tabs: pill tab nav, one product at a time. |
+| `heading` | string |  |  | Optionaler Titel der Section, z. B. {Grössen im Überblick}. Stacked: über der Produkt-Navigation. Tabs: zentriert auf dem grauen Band. |
+| `subtitle` | string |  |  | Optionale Zeile unter der Überschrift, z. B. {Für moderne Kontrollraumarbeitsplätze}. Nur in der Variante Tabs sichtbar. |
+| `intro` | text |  |  | Optionaler kurzer Einleitungstext unter dem Untertitel. Nur in der Variante Tabs sichtbar. |
+| `variant` | string |  |  | Werte: `stacked` · `plain` · `tabs` · Default: `stacked` |
 | `products` | links |  |  | → `product` |
 
 ### `download_item` — 📄 Download
@@ -840,7 +850,7 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`)
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
 | `heading` | string |  |  |  |
-| `description` | text |  |  | Optional intro paragraph under the heading. |
+| `description` | text |  |  | Optionaler Einleitungstext unter der Überschrift. |
 | `files` | rich_text |  |  | Blöcke: `download_item` |
 | `link` | rich_text |  |  | Blöcke: `nav_link` · max. 1 |
 
@@ -871,7 +881,7 @@ block · Einsatz: Baustein (`color_slider_section.slides`)
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
 | `image` | file | ✓ |  |  |
-| `color` | string | ✓ |  | Hex-Farbe, z.B. {#B5BF9C} — färbt das Header-Band, wenn dieses Bild in der Mitte steht. |
+| `color` | string | ✓ |  | Hex-Farbe, z. B. {#B5BF9C} — färbt das Header-Band, wenn dieses Bild in der Mitte steht. |
 
 ### `color_slider_section` — 🎨 Color Slider
 
@@ -888,12 +898,12 @@ block · Einsatz: Baustein (`content_tab_nav_section.tabs`)
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
 | `label` | string | ✓ |  |  |
-| `operator` | string |  |  | Optional decorative connector shown before this tab in the nav, e.g. {=} or {+} (Talky Village case). |
+| `operator` | string |  |  | Optionales dekoratives Verbindungszeichen vor diesem Tab in der Navigation, z. B. {=} oder {+} (Fall Talky Village). |
 | `title` | string |  |  |  |
 | `text` | text |  |  |  |
 | `link` | rich_text |  |  | Blöcke: `nav_link` · max. 1 |
-| `image` | file | ✓ |  | Hotspots variant: the image's focal point marks where this tab's marker sits on the base image — all tab images must share the base image's canvas. |
-| `image_mobile` | file |  |  | Optional art-directed image for narrow portrait screens. |
+| `image` | file | ✓ |  | Variante Hotspots: Der Fokuspunkt des Bildes bestimmt, wo der Marker dieses Tabs auf dem Basisbild sitzt — alle Tab-Bilder brauchen denselben Bildausschnitt wie das Basisbild. |
+| `image_mobile` | file |  |  | Optionales, eigens gewähltes Bild für schmale Hochformat-Bildschirme. |
 
 ### `content_tab_nav_section` — 🎛️ Content Tab Nav
 
@@ -901,10 +911,10 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`)
 
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
-| `variant` | string |  |  | Werte: `tab_nav` · `hotspots` · Default: `tab_nav` — {tab_nav} = pill navigation pinned over the visual. {hotspots} = tab labels sit as markers on the base image (at each tab image's focal point) and open a flyout card. |
-| `legend` | string |  |  | Accessible name for the tab group (visually hidden). Falls back to a default when empty. |
-| `base_image` | file |  |  | Hotspots variant only: the neutral image shown while no marker is selected. Tab images swap in over it and must share its canvas. |
-| `base_image_mobile` | file |  |  | Optional art-directed base image for narrow portrait screens (hotspots variant). |
+| `variant` | string |  |  | Werte: `tab_nav` · `hotspots` · Default: `tab_nav` |
+| `legend` | string |  |  | Bezeichnung der Tab-Gruppe für Screenreader (visuell nicht sichtbar). Leer: es gilt ein Standardtext. |
+| `base_image` | file |  |  | Nur Variante Hotspots: das neutrale Bild, solange kein Marker gewählt ist. Die Tab-Bilder werden darüber eingeblendet und brauchen denselben Bildausschnitt. |
+| `base_image_mobile` | file |  |  | Optionales, eigens gewähltes Basisbild für schmale Hochformat-Bildschirme (Variante Hotspots). |
 | `tabs` | rich_text |  |  | Blöcke: `content_tab` |
 
 ### `flexible_image_setting` — 🎛️ Image Settings
@@ -913,9 +923,9 @@ block · Einsatz: Baustein (`flexible_image_section.base_settings`)
 
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
-| `crop` | string |  |  | Percent cut off each side. Negative = the image bleeds outward past the container as margin-inline. |
-| `margin_top` | string |  |  | Spacing above in pixels, negative allowed (overlaps the previous element). |
-| `margin_bottom` | string |  |  | Spacing below in pixels, negative allowed. |
+| `crop` | string |  |  | Prozent, die auf jeder Seite weggeschnitten werden. Negativ = das Bild ragt über den Container hinaus. |
+| `margin_top` | string |  |  | Abstand nach oben in Pixel, negative Werte erlaubt (überlappt das vorherige Element). |
+| `margin_bottom` | string |  |  | Abstand nach unten in Pixel, negative Werte erlaubt. |
 
 ### `flexible_image_viewport` — 📐 Viewport Setting
 
@@ -923,10 +933,10 @@ block · Titel-Feld: `breakpoint` · Einsatz: Baustein (`flexible_image_section.
 
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
-| `breakpoint` | string | ✓ |  | Werte: `xs` · `sm` · `md` · `lg` · `xl` · `xxl` — The values below apply beneath this width (desktop-first: the base settings apply above). Empty fields inherit from the next-wider setting. One entry per width — with duplicates the last one wins. |
-| `crop` | string |  |  | Percent cut off each side. Negative = the image bleeds outward past the container as margin-inline. |
-| `margin_top` | string |  |  | Spacing above in pixels, negative allowed (overlaps the previous element). |
-| `margin_bottom` | string |  |  | Spacing below in pixels, negative allowed. |
+| `breakpoint` | string | ✓ |  | Werte: `xs` · `sm` · `md` · `lg` · `xl` · `xxl` — Die Werte unten gelten unterhalb dieser Breite (Desktop first: darüber gelten die Basis-Einstellungen). Leere Felder erben von der nächstbreiteren Einstellung. Pro Breite ein Eintrag — bei Duplikaten gewinnt der letzte. |
+| `crop` | string |  |  | Prozent, die auf jeder Seite weggeschnitten werden. Negativ = das Bild ragt über den Container hinaus. |
+| `margin_top` | string |  |  | Abstand nach oben in Pixel, negative Werte erlaubt (überlappt das vorherige Element). |
+| `margin_bottom` | string |  |  | Abstand nach unten in Pixel, negative Werte erlaubt. |
 
 ### `flexible_image_section` — 🖼️ Flexible Image
 
@@ -935,6 +945,6 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`)
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
 | `image` | file | ✓ |  |  |
-| `background` | string |  |  | Werte: `white` · `grey` · Default: `white` — Color of the band behind this section. |
-| `base_settings` | rich_text | ✓ |  | Blöcke: `flexible_image_setting` · max. 1 — Crop/margins for all viewports (the desktop view). Empty values = full width, no extra spacing. |
-| `viewport_settings` | rich_text |  |  | Blöcke: `flexible_image_viewport` — Optional: deviations below a width (desktop-first, e.g. a tighter crop on mobile). |
+| `background` | string |  |  | Werte: `white` · `grey` · Default: `white` — Farbe des Bands hinter dieser Section. |
+| `base_settings` | rich_text | ✓ |  | Blöcke: `flexible_image_setting` · max. 1 — Beschnitt und Abstände für alle Viewports (die Desktop-Ansicht). Leere Werte = volle Breite, keine zusätzlichen Abstände. |
+| `viewport_settings` | rich_text |  |  | Blöcke: `flexible_image_viewport` — Optional: Abweichungen unterhalb einer bestimmten Breite (Desktop first, z. B. ein engerer Beschnitt auf Mobile). |
