@@ -20,6 +20,7 @@ Sprachen: `de` (Hauptsprache), `en`, `fr`. **Lok ✓** = lokalisiertes Feld: bei
 | `project_volume` | collection | 💰 Projektvolumen |
 | `reference` | collection | 🏗️ Referenz |
 | `person` | collection | 👤 Person |
+| `department` | collection | 🏢 Abteilung |
 | `location_type` | collection | 🏷️ Standort-Typ |
 | `location` | collection | 📍 Standort |
 | `translation` | collection | 🌐 Übersetzung |
@@ -175,15 +176,26 @@ collection · Titel-Feld: `internal_label`
 | `internal_label` | string | ✓ |  | Nur für die Redaktion: Titel dieses Datensatzes in Listen und Auswahlfeldern. |
 | `name` | string | ✓ |  |  |
 | `role` | string |  | ✓ |  |
+| `qualification` | string |  | ✓ | Optionaler Titel oder Abschluss, z. B. {Dipl. Ing. FH} — steht auf der Teamseite als eigene Zeile unter der Rolle. |
 | `phone` | string |  |  | Internationales Format, z. B. {+41 71 644 88 88} — wird als tel:-Link ausgegeben. |
 | `email` | string |  |  | Persönliche oder Team-Adresse, z. B. {vorname.nachname@erichkeller.com} — wird als mailto:-Link ausgegeben. |
 | `contact_url` | string |  |  | Optionaler Link für den Kontakt-Slide, z. B. eine Buchungs- oder Profilseite. Vollständige URL inkl. {https://}. |
 | `portrait` | file |  |  |  |
 | `solution` | link |  |  | → `solution` — Hauptgeschäftsbereich dieser Person — filtert die Kontaktauswahl im Deck-Konfigurator. |
+| `departments` | links |  |  | → `department` — Bestimmt die Teamseite: Personen mit mindestens einer Abteilung werden dort aufgelistet, alle anderen nicht. Mehrfachzuordnung möglich. |
 | **Fieldset «Kontaktsprachen»** | | | | Sprachen, in denen diese Person kontaktiert werden kann. |
 | `lang_de` | boolean |  |  | Default: `true` |
 | `lang_en` | boolean |  |  |  |
 | `lang_fr` | boolean |  |  |  |
+
+### `department` — 🏢 Abteilung
+
+collection · manuell sortierbar · Titel-Feld: `name`
+
+| Feld | Typ | Pflicht | Lok | Details |
+| --- | --- | :-: | :-: | --- |
+| `name` | string | ✓ | ✓ |  |
+| `slug` | slug |  | ✓ | abgeleitet aus `name` |
 
 ### `location_type` — 🏷️ Standort-Typ
 
@@ -714,7 +726,7 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`)
 | --- | --- | :-: | :-: | --- |
 | `heading` | string |  |  |  |
 | `intro` | text |  |  |  |
-| `source` | string | ✓ |  | Werte: `references` · Default: `references` — Welche Sammlung aufgelistet wird. Weitere Quellen können später dazukommen. |
+| `source` | string | ✓ |  | Werte: `references` · `team` · Default: `references` — Welche Sammlung aufgelistet wird. Weitere Quellen können später dazukommen. |
 | `show_filters` | boolean |  |  | Default: `true` — Blendet die Filterleiste über der Liste ein. |
 
 ### `contact_cta` — 📞 Contact CTA
