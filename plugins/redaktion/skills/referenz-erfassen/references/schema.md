@@ -38,7 +38,7 @@ singleton
 | `title` | string | ✓ | ✓ |  |
 | `seo` | seo |  | ✓ |  |
 | `header` | rich_text |  | ✓ | Blöcke: `hero_slider`, `page_intro`, `statement_media_section` · max. 1 |
-| `sections` | rich_text |  | ✓ | Blöcke: `anchor`, `spacer_section`, `statement_media_section`, `content_with_media_section`, `sticky_scroll_section`, `tabs_with_media_section`, `text_columns_section`, `richtext_block`, `accordion`, `stats_section`, `facts_figures_section`, `pikto_section`, `media_block`, `external_video_block`, `media_slider_section`, `reference_teasers_section`, `available_models_section`, `teaser_collection_section`, `image_text_grid_section`, `collection_section`, `contact_cta`, `link_list`, `quote_section`, `quotes_slider_section`, `hubspot_form_section`, `job_listing_section`, `locations_section`, `image_marquee`, `airflow_animation`, `solution_slider`, `product_detail_section`, `downloads_section`, `pcon_configurator_section`, `product_carousel_section`, `color_slider_section`, `content_tab_nav_section`, `flexible_image_section` |
+| `sections` | rich_text |  | ✓ | Blöcke: `anchor`, `spacer_section`, `statement_media_section`, `content_with_media_section`, `sticky_scroll_section`, `tabs_with_media_section`, `text_columns_section`, `richtext_block`, `accordion`, `stats_section`, `facts_figures_section`, `pikto_section`, `media_block`, `external_video_block`, `media_slider_section`, `reference_teasers_section`, `available_models_section`, `teaser_collection_section`, `image_text_grid_section`, `collection_section`, `contact_cta`, `link_list`, `customer_marquee_section`, `quote_section`, `quotes_slider_section`, `hubspot_form_section`, `job_listing_section`, `locations_section`, `image_marquee`, `airflow_animation`, `solution_slider`, `product_detail_section`, `downloads_section`, `pcon_configurator_section`, `product_carousel_section`, `color_slider_section`, `content_tab_nav_section`, `flexible_image_section` |
 
 ### `cms_page` — 📄 CMS-Seite
 
@@ -50,7 +50,7 @@ tree (Seitenbaum)
 | `slug` | slug |  | ✓ | abgeleitet aus `title` |
 | `seo` | seo |  | ✓ |  |
 | `header` | rich_text |  | ✓ | Blöcke: `hero_slider`, `page_intro`, `statement_media_section` · max. 1 |
-| `sections` | rich_text |  | ✓ | Blöcke: `anchor`, `spacer_section`, `statement_media_section`, `content_with_media_section`, `sticky_scroll_section`, `tabs_with_media_section`, `text_columns_section`, `richtext_block`, `accordion`, `stats_section`, `facts_figures_section`, `pikto_section`, `media_block`, `external_video_block`, `media_slider_section`, `reference_teasers_section`, `available_models_section`, `teaser_collection_section`, `image_text_grid_section`, `collection_section`, `contact_cta`, `link_list`, `quote_section`, `quotes_slider_section`, `hubspot_form_section`, `job_listing_section`, `locations_section`, `image_marquee`, `airflow_animation`, `solution_slider`, `product_detail_section`, `downloads_section`, `pcon_configurator_section`, `product_carousel_section`, `color_slider_section`, `content_tab_nav_section`, `flexible_image_section` |
+| `sections` | rich_text |  | ✓ | Blöcke: `anchor`, `spacer_section`, `statement_media_section`, `content_with_media_section`, `sticky_scroll_section`, `tabs_with_media_section`, `text_columns_section`, `richtext_block`, `accordion`, `stats_section`, `facts_figures_section`, `pikto_section`, `media_block`, `external_video_block`, `media_slider_section`, `reference_teasers_section`, `available_models_section`, `teaser_collection_section`, `image_text_grid_section`, `collection_section`, `contact_cta`, `link_list`, `customer_marquee_section`, `quote_section`, `quotes_slider_section`, `hubspot_form_section`, `job_listing_section`, `locations_section`, `image_marquee`, `airflow_animation`, `solution_slider`, `product_detail_section`, `downloads_section`, `pcon_configurator_section`, `product_carousel_section`, `color_slider_section`, `content_tab_nav_section`, `flexible_image_section` |
 
 ### `solution` — 💡 Geschäftsbereich
 
@@ -335,6 +335,8 @@ Einsatz: **Header** = erlaubt im `header`-Feld (genau 1 Block) · **Section** = 
 | `collection_section` | 🗂️ Collection | Section |
 | `contact_cta` | 📞 Contact CTA | Section |
 | `link_list` | 🔗 Link List | Section |
+| `customer_item` | 🏢 Customer | Baustein |
+| `customer_marquee_section` | 🏢 Customer Marquee | Section |
 | `quote_section` | ❝ Quote | Section |
 | `quotes_slider_section` | ❝ Quotes Slider | Section |
 | `hubspot_form_section` | HubSpot Form | Section |
@@ -764,6 +766,24 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`)
 | `text` | structured_text |  |  | Record-Links: `cms_page`, `reference`, `product` · Headings:  · Marks: strong, underline, strikethrough · Nodes: link |
 | `link` | rich_text |  |  | Blöcke: `nav_link` · max. 1 |
 | `items` | rich_text |  |  | Blöcke: `nav_link` |
+
+### `customer_item` — 🏢 Customer
+
+block · Einsatz: Baustein (`customer_marquee_section.items`)
+
+| Feld | Typ | Pflicht | Lok | Details |
+| --- | --- | :-: | :-: | --- |
+| `name` | string | ✓ |  |  |
+| `reference` | link |  |  | → `reference` — Optional — ohne Referenz wird der Name nicht verlinkt. |
+
+### `customer_marquee_section` — 🏢 Customer Marquee
+
+block · Einsatz: Section (`home_page.sections`, `cms_page.sections`)
+
+| Feld | Typ | Pflicht | Lok | Details |
+| --- | --- | :-: | :-: | --- |
+| `heading` | string |  |  | Wir nicht angezeigt, nur für SEO und Screenreader |
+| `items` | rich_text |  |  | Blöcke: `customer_item` |
 
 ### `quote_section` — ❝ Quote
 
