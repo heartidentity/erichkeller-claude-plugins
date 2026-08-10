@@ -21,6 +21,7 @@ Sprachen: `de` (Hauptsprache), `en`, `fr`. **Lok ✓** = lokalisiertes Feld: bei
 | `reference` | collection | 🏗️ Referenz |
 | `person` | collection | 👤 Person |
 | `department` | collection | 🏢 Abteilung |
+| `contact_group` | collection | 🎯 Kontaktgruppe |
 | `location_type` | collection | 🏷️ Standort-Typ |
 | `location` | collection | 📍 Standort |
 | `translation` | collection | 🌐 Übersetzung |
@@ -179,7 +180,7 @@ collection · Titel-Feld: `internal_label`
 | `qualification` | string |  | ✓ | Optionaler Titel oder Abschluss, z. B. {Dipl. Ing. FH} — steht auf der Teamseite als eigene Zeile unter der Rolle. |
 | `phone` | string |  |  | Internationales Format, z. B. {+41 71 644 88 88} — wird als tel:-Link ausgegeben. |
 | `email` | string |  |  | Persönliche oder Team-Adresse, z. B. {vorname.nachname@erichkeller.com} — wird als mailto:-Link ausgegeben. |
-| `contact_url` | string |  |  | Optionaler Link für den Kontakt-Slide, z. B. eine Buchungs- oder Profilseite. Vollständige URL inkl. {https://}. |
+| `video_call_url` | string |  |  | Buchungsformular für einen Video Call mit dieser Person. Nur wenn hier ein Link steht, kann der Contact CTA den Button {Video Call vereinbaren} anzeigen. Vollständige URL inkl. {https://}. |
 | `portrait` | file |  |  |  |
 | `solution` | link |  |  | → `solution` — Hauptgeschäftsbereich dieser Person — filtert die Kontaktauswahl im Deck-Konfigurator. |
 | `departments` | links |  |  | → `department` — Bestimmt die Teamseite: Personen mit mindestens einer Abteilung werden dort aufgelistet, alle anderen nicht. Mehrfachzuordnung möglich. |
@@ -196,6 +197,18 @@ collection · manuell sortierbar · Titel-Feld: `name`
 | --- | --- | :-: | :-: | --- |
 | `name` | string | ✓ | ✓ |  |
 | `slug` | slug |  | ✓ | abgeleitet aus `name` |
+
+### `contact_group` — 🎯 Kontaktgruppe
+
+collection · Titel-Feld: `internal_label`
+
+| Feld | Typ | Pflicht | Lok | Details |
+| --- | --- | :-: | :-: | --- |
+| `internal_label` | string | ✓ |  | Nur für die Redaktion: Titel dieser Kontaktgruppe in Listen und Auswahlfeldern, z. B. {Innenausbau Office}. |
+| `form_value` | string | ✓ |  | unique — Wert, der dem Kontaktformular übergeben wird, damit die Anfrage im richtigen Flow landet. Wird als {?contact_group=wert} an die Kontaktseite gehängt — muss exakt dem Wert im HubSpot-Formular entsprechen. |
+| `contact_person` | link | ✓ | ✓ | → `person` — Pro Sprache die Person, die Anfragen zu diesem Thema entgegennimmt. |
+| `contact_person_de_at` | link |  | ✓ | → `person` — Optional: eigene Ansprechperson für Interessenten aus Deutschland und Österreich. Ist sie gesetzt, blendet der Contact CTA eine Umschaltung {Schweiz / DE / AT} ein und wählt anhand der Herkunft vor. |
+| `offer_video_call` | boolean |  |  | Default: `false` — Zeigt zusätzlich den Button {Video Call vereinbaren} — sofern die ausgewählte Kontaktperson einen Link zu ihrem Video-Call-Formular hinterlegt hat. |
 
 ### `location_type` — 🏷️ Standort-Typ
 
@@ -242,9 +255,11 @@ singleton
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
 | `label` | string |  | ✓ |  |
+| **Fieldset «Übergeordnete Seiten»** | | | |  |
 | `reference_parent` | link |  |  | → `cms_page` — Referenzen werden unter dieser Seite publiziert: {pfad-der-seite}/{referenz-slug}. Ihre URLs und Sitemap-Einträge hängen davon ab. |
 | `job_parent` | link |  |  | → `cms_page` — Jobseiten (aus dem Dualoo-Feed) werden unter dieser Seite publiziert: {pfad-der-seite}/{job-slug}. |
-| `contact_page` | link |  |  | → `cms_page` — Globale Kontakt- bzw. Formularseite — Ziel für alle Contact-CTA-Buttons ohne eigene Kontaktseite. |
+| `contact_page` | link |  |  | → `cms_page` — Globale Kontakt- bzw. Formularseite — Ziel für Contact-CTA-Buttons ohne Kontaktgruppe. |
+| `contact_group_page` | link |  |  | → `cms_page` — Formularseite für Contact CTAs mit Kontaktgruppe. Der Formularwert der Gruppe wird als {?contact_group=wert} angehängt. Leer: es gilt die normale Kontaktseite. |
 | `header_navigation` | rich_text |  | ✓ | Blöcke: `menu_group` |
 | `footer_info` | structured_text |  | ✓ | Record-Links: `cms_page`, `reference`, `product` · Headings:  · Marks: strong, underline, strikethrough · Nodes: list, link |
 | `footer_navigation` | rich_text |  | ✓ | Blöcke: `menu_group` |
@@ -736,10 +751,8 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`)
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
 | `heading` | string | ✓ |  |  |
-| `subline` | string |  |  |  |
-| `person` | link |  |  | → `person` |
-| `contact_page` | link |  |  | → `cms_page` — Zielseite des CTA-Buttons, z. B. das Kontaktformular. Leer: es gilt die globale Kontaktseite aus den Website-Einstellungen. |
-| `background` | string |  |  | Werte: `white` · `black` · Default: `white` |
+| `contact_group` | link |  |  | → `contact_group` — Bestimmt Kontaktperson und Ziel des Formulars. Leer: der Button führt auf die globale Kontaktseite aus den Website-Einstellungen, ohne Kontaktperson. |
+| `background` | string |  |  | Werte: `white` · `black` · Default: `black` |
 
 ### `link_list` — 🔗 Link List
 
