@@ -205,7 +205,7 @@ collection · Titel-Feld: `internal_label`
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
 | `internal_label` | string | ✓ |  | Nur für die Redaktion: Titel dieser Kontaktgruppe in Listen und Auswahlfeldern, z. B. {Innenausbau Office}. |
-| `form_value` | string | ✓ |  | unique — Wert, der dem Kontaktformular übergeben wird, damit die Anfrage im richtigen Flow landet. Wird als {?contact_group=wert} an die Kontaktseite gehängt — muss exakt dem Wert im HubSpot-Formular entsprechen. |
+| `form_value` | string | ✓ |  | Wert, der dem Kontaktformular übergeben wird, damit die Anfrage im richtigen Flow landet. Wird als {?contact_group=wert} an die Kontaktseite gehängt und dort auf das HubSpot-Feld übersetzt — muss exakt einer Option im HubSpot-Formular entsprechen ({AP}, {Talky}, {IA Office}, {Klima Adia}, {Allgemeine Anfrage}, …). Passt der Wert nicht, startet das Formular einfach ohne Vorauswahl. |
 | `contact_person` | link | ✓ | ✓ | → `person` — Pro Sprache die Person, die Anfragen zu diesem Thema entgegennimmt. |
 | `contact_person_de_at` | link |  | ✓ | → `person` — Optional: eigene Ansprechperson für Interessenten aus Deutschland und Österreich. Ist sie gesetzt, blendet der Contact CTA eine Umschaltung {Schweiz / DE / AT} ein und wählt anhand der Herkunft vor. |
 | `offer_video_call` | boolean |  |  | Default: `false` — Zeigt zusätzlich den Button {Video Call vereinbaren} — sofern die ausgewählte Kontaktperson einen Link zu ihrem Video-Call-Formular hinterlegt hat. |
@@ -339,6 +339,7 @@ Einsatz: **Header** = erlaubt im `header`-Feld (genau 1 Block) · **Section** = 
 | `customer_marquee_section` | 🏢 Customer Marquee | Section |
 | `quote_section` | ❝ Quote | Section |
 | `quotes_slider_section` | ❝ Quotes Slider | Section |
+| `hubspot_prefill` | ▸ Vorauswahl | Baustein |
 | `hubspot_form_section` | HubSpot Form | Section |
 | `job_listing_section` | 💼 Job Listing | Section |
 | `locations_section` | 📍 Locations | Section |
@@ -532,7 +533,7 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`, `reference
 
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
-| `body` | structured_text |  |  | Blöcke: `accordion`, `spec_table`, `anchor`, `download_item` · Record-Links: `cms_page`, `reference`, `product` · Headings: h3–h6 · Marks: strong, underline, strikethrough · Nodes: heading, list, link, blockquote |
+| `body` | structured_text |  |  | Blöcke: `accordion`, `spec_table`, `anchor`, `download_item` · Record-Links: `cms_page`, `reference`, `product` · Headings: h2–h6 · Marks: strong, underline, strikethrough · Nodes: heading, list, link, blockquote |
 
 ### `accordion_item` — ➕ Accordion Item
 
@@ -802,6 +803,15 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`)
 | --- | --- | :-: | :-: | --- |
 | `quotes` | rich_text | ✓ |  | Blöcke: `quote_section` · max. 5 — 1–5 Zitate, einzeln nacheinander gezeigt; beim Scrollen durch die Section wird zum nächsten Zitat übergeblendet. |
 
+### `hubspot_prefill` — ▸ Vorauswahl
+
+block · Titel-Feld: `form_field` · Einsatz: Baustein (`hubspot_form_section.prefill`)
+
+| Feld | Typ | Pflicht | Lok | Details |
+| --- | --- | :-: | :-: | --- |
+| `url_param` | string | ✓ |  | Name des Parameters, der an die Adresse dieser Seite gehängt wird. Für Links aus einem Kontakt-Button ist das {contact_group}. |
+| `form_field` | string | ✓ |  | Interner Name der HubSpot-Eigenschaft, die vorausgefüllt werden soll, z. B. {kontaktformular_interesse_kombiniert}. In HubSpot beim Feld unter «Interner Name» zu finden — ohne das vorangestellte {0-1/}. |
+
 ### `hubspot_form_section` — HubSpot Form
 
 block · Einsatz: Section (`home_page.sections`, `cms_page.sections`, `website.pcon_contact_form`, `available_models_section.form`)
@@ -809,6 +819,7 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`, `website.p
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
 | `embed` | text | ✓ |  | Einfach aus HubSpot kopieren: Einbettungscode (Standard oder Entwickler) oder eine Formular-URL aus der HubSpot-App — Portal-ID, Formular-ID und Region werden automatisch erkannt. |
+| `prefill` | rich_text |  |  | Blöcke: `hubspot_prefill` — Optional: füllt Formularfelder aus Parametern in der Adresse dieser Seite vor. Nötig, damit ein Kontakt-Button sein Thema mitgeben kann — ohne Eintrag startet das Formular leer. |
 
 ### `job_listing_section` — 💼 Job Listing
 
