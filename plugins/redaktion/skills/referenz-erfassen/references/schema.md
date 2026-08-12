@@ -368,8 +368,9 @@ block · Einsatz: Baustein (`product.links`, `website.legal_links`, `hero_slide.
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
 | `label` | string | ✓ |  |  |
-| `page` | link |  |  | → `cms_page`, `home_page`, `reference` — Entweder eine Seite wählen ODER unten die externe URL ausfüllen — nicht beides. |
+| `page` | link |  |  | → `cms_page`, `home_page`, `reference` — Entweder eine Seite wählen ODER unter {Erweitert} die externe URL ausfüllen — nicht beides. |
 | `external_url` | string |  |  |  |
+| `filter` | string |  |  | Öffnet die Zielseite mit gesetzten Filtern. Am einfachsten: Zielseite im Browser filtern und die URL aus der Adresszeile hier einfügen — der Filterteil wird automatisch übernommen. |
 | `anchor` | string |  |  | Optionaler Anker auf der Zielseite. Die Auswahl zeigt die Anker der verlinkten Seite; von Hand eingetippt ohne {#}, z. B. {oeffnungszeiten}. |
 
 ### `menu_link` — 🧭 Menu Link
@@ -379,10 +380,11 @@ block · Einsatz: Baustein (`menu_group.overview_link`, `menu_group.items`)
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
 | `label` | string | ✓ |  |  |
-| `page` | link |  |  | → `cms_page`, `home_page`, `reference` — Entweder eine Seite wählen ODER unten die externe URL ausfüllen — nicht beides. |
-| `external_url` | string |  |  |  |
-| `anchor` | string |  |  | Optionaler Anker auf der Zielseite, ohne führendes {#} — z. B. {oeffnungszeiten}. |
+| `page` | link |  |  | → `cms_page`, `home_page`, `reference` — Entweder eine Seite wählen ODER unter {Erweitert} die externe URL ausfüllen — nicht beides. |
 | `image` | file |  |  | Optional. Erscheint beim Hover im Mega-Menü des Headers. |
+| `external_url` | string |  |  |  |
+| `filter` | string |  |  | Öffnet die Zielseite mit gesetzten Filtern. Am einfachsten: Zielseite im Browser filtern und die URL aus der Adresszeile hier einfügen — der Filterteil wird automatisch übernommen. |
+| `anchor` | string |  |  | Optionaler Anker auf der Zielseite. Die Auswahl zeigt die Anker der verlinkten Seite; von Hand eingetippt ohne {#}, z. B. {oeffnungszeiten}. |
 
 ### `menu_group` — 🧭 Menu Group
 
@@ -710,12 +712,13 @@ block · Einsatz: Baustein (`teaser_collection_section.items`)
 
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
-| `page` | link |  |  | → `cms_page`, `home_page`, `reference` — Entweder eine Seite wählen ODER unten die externe URL ausfüllen — nicht beides. |
-| `external_url` | string |  |  |  |
-| `anchor` | string |  |  | Optionaler Anker auf der Zielseite, ohne führendes {#} — z. B. {oeffnungszeiten}. |
+| `page` | link |  |  | → `cms_page`, `home_page`, `reference` — Entweder eine Seite wählen ODER unter {Erweitert} die externe URL ausfüllen — nicht beides. |
 | `title` | string |  |  | Leer lassen: es gilt der Titel des verlinkten Ziels. |
 | `text` | text |  |  | Optionaler Kurztext unter dem Titel. |
 | `image` | file |  |  | Leer lassen: es gilt das Teaser-Bild des verlinkten Ziels. |
+| `external_url` | string |  |  |  |
+| `filter` | string |  |  | Öffnet die Zielseite mit gesetzten Filtern. Am einfachsten: Zielseite im Browser filtern und die URL aus der Adresszeile hier einfügen — der Filterteil wird automatisch übernommen. |
+| `anchor` | string |  |  | Optionaler Anker auf der Zielseite. Die Auswahl zeigt die Anker der verlinkten Seite; von Hand eingetippt ohne {#}, z. B. {oeffnungszeiten}. |
 
 ### `teaser_collection_section` — 🧲 Teaser Collection
 
