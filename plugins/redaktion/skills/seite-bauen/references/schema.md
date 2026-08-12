@@ -303,7 +303,7 @@ Einsatz: **Header** = erlaubt im `header`-Feld (genau 1 Block) · **Section** = 
 | `hero_slide` | 🖼️ Hero Slide | Baustein |
 | `hero_slider` | 🦸 Hero Slider | Header |
 | `page_intro` | 🦸 Page Intro | Header |
-| `statement_media_section` | 💬 Statement Media | Header + Section |
+| `statement_media_section` | 📢 Statement Media | Header + Section |
 | `content_with_media_section` | 📰 Content with Media | Section |
 | `sticky_scroll_entry` | 🗓️ Sticky Scroll Entry | Baustein |
 | `sticky_scroll_section` | 📜 Sticky Scroll Text-Media | Section |
@@ -338,8 +338,8 @@ Einsatz: **Header** = erlaubt im `header`-Feld (genau 1 Block) · **Section** = 
 | `link_list` | 🔗 Link List | Section |
 | `customer_item` | 🏢 Customer | Baustein |
 | `customer_marquee_section` | 🏢 Customer Marquee | Section |
-| `quote_section` | ❝ Quote | Section |
-| `quotes_slider_section` | ❝ Quotes Slider | Section |
+| `quote_section` | 💬 Quote | Section |
+| `quotes_slider_section` | 💬 Quotes Slider | Section |
 | `hubspot_prefill` | ▸ Vorauswahl | Baustein |
 | `hubspot_form_section` | HubSpot Form | Section |
 | `job_listing_section` | 💼 Job Listing | Section |
@@ -445,7 +445,7 @@ block · Einsatz: Header (`home_page.header`, `cms_page.header`)
 | `gallery` | gallery |  |  | Optionale Medien im Satzspiegel (ca. 12:7). Ein einzelner Eintrag erscheint als einzelnes Bild, mehrere Einträge als Slider mit denselben Abständen. |
 | `autoplay` | boolean |  |  | Default: `true` — Schaltet den Medien-Slider automatisch weiter. Nur relevant, wenn die Galerie mehr als einen Eintrag hat; aus heisst: nur manuelle Navigation. |
 
-### `statement_media_section` — 💬 Statement Media
+### `statement_media_section` — 📢 Statement Media
 
 block · Einsatz: Header + Section (`home_page.header`, `home_page.sections`, `cms_page.header`, `cms_page.sections`)
 
@@ -803,7 +803,7 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`)
 | `heading` | string |  |  | Wir nicht angezeigt, nur für SEO und Screenreader |
 | `items` | rich_text |  |  | Blöcke: `customer_item` |
 
-### `quote_section` — ❝ Quote
+### `quote_section` — 💬 Quote
 
 block · Einsatz: Section (`home_page.sections`, `cms_page.sections`, `quotes_slider_section.quotes`)
 
@@ -812,7 +812,7 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`, `quotes_sl
 | `quote` | text | ✓ |  |  |
 | `attribution` | string |  |  |  |
 
-### `quotes_slider_section` — ❝ Quotes Slider
+### `quotes_slider_section` — 💬 Quotes Slider
 
 block · Einsatz: Section (`home_page.sections`, `cms_page.sections`)
 
