@@ -38,7 +38,7 @@ singleton
 | `title` | string | ✓ | ✓ |  |
 | `seo` | seo |  | ✓ |  |
 | `header` | rich_text |  | ✓ | Blöcke: `hero_slider`, `page_intro`, `statement_media_section` · max. 1 |
-| `sections` | rich_text |  | ✓ | Blöcke: `anchor`, `spacer_section`, `statement_media_section`, `content_with_media_section`, `sticky_scroll_section`, `tabs_with_media_section`, `text_columns_section`, `richtext_block`, `accordion`, `stats_section`, `facts_figures_section`, `pikto_section`, `media_block`, `external_video_block`, `media_slider_section`, `reference_teasers_section`, `available_models_section`, `teaser_collection_section`, `image_text_grid_section`, `collection_section`, `contact_cta`, `link_list`, `customer_marquee_section`, `quote_section`, `quotes_slider_section`, `hubspot_form_section`, `job_listing_section`, `locations_section`, `image_marquee`, `airflow_animation`, `solution_slider`, `product_detail_section`, `downloads_section`, `pcon_configurator_section`, `product_carousel_section`, `color_slider_section`, `content_tab_nav_section`, `flexible_image_section` |
+| `sections` | rich_text |  | ✓ | Blöcke: `anchor`, `spacer_section`, `statement_media_section`, `content_with_media_section`, `sticky_scroll_section`, `tabs_with_media_section`, `text_columns_section`, `richtext_block`, `accordion`, `stats_section`, `facts_figures_section`, `pikto_section`, `media_block`, `image_compare_section`, `external_video_block`, `media_slider_section`, `reference_teasers_section`, `available_models_section`, `teaser_collection_section`, `image_text_grid_section`, `collection_section`, `contact_cta`, `link_list`, `customer_marquee_section`, `quote_section`, `quotes_slider_section`, `hubspot_form_section`, `job_listing_section`, `locations_section`, `image_marquee`, `airflow_animation`, `solution_slider`, `product_detail_section`, `downloads_section`, `pcon_configurator_section`, `product_carousel_section`, `color_slider_section`, `content_tab_nav_section`, `flexible_image_section` |
 
 ### `cms_page` — 📄 CMS-Seite
 
@@ -50,7 +50,7 @@ tree (Seitenbaum)
 | `slug` | slug |  | ✓ | abgeleitet aus `title` |
 | `seo` | seo |  | ✓ |  |
 | `header` | rich_text |  | ✓ | Blöcke: `hero_slider`, `page_intro`, `statement_media_section` · max. 1 |
-| `sections` | rich_text |  | ✓ | Blöcke: `anchor`, `spacer_section`, `statement_media_section`, `content_with_media_section`, `sticky_scroll_section`, `tabs_with_media_section`, `text_columns_section`, `richtext_block`, `accordion`, `stats_section`, `facts_figures_section`, `pikto_section`, `media_block`, `external_video_block`, `media_slider_section`, `reference_teasers_section`, `available_models_section`, `teaser_collection_section`, `image_text_grid_section`, `collection_section`, `contact_cta`, `link_list`, `customer_marquee_section`, `quote_section`, `quotes_slider_section`, `hubspot_form_section`, `job_listing_section`, `locations_section`, `image_marquee`, `airflow_animation`, `solution_slider`, `product_detail_section`, `downloads_section`, `pcon_configurator_section`, `product_carousel_section`, `color_slider_section`, `content_tab_nav_section`, `flexible_image_section` |
+| `sections` | rich_text |  | ✓ | Blöcke: `anchor`, `spacer_section`, `statement_media_section`, `content_with_media_section`, `sticky_scroll_section`, `tabs_with_media_section`, `text_columns_section`, `richtext_block`, `accordion`, `stats_section`, `facts_figures_section`, `pikto_section`, `media_block`, `image_compare_section`, `external_video_block`, `media_slider_section`, `reference_teasers_section`, `available_models_section`, `teaser_collection_section`, `image_text_grid_section`, `collection_section`, `contact_cta`, `link_list`, `customer_marquee_section`, `quote_section`, `quotes_slider_section`, `hubspot_form_section`, `job_listing_section`, `locations_section`, `image_marquee`, `airflow_animation`, `solution_slider`, `product_detail_section`, `downloads_section`, `pcon_configurator_section`, `product_carousel_section`, `color_slider_section`, `content_tab_nav_section`, `flexible_image_section` |
 
 ### `solution` — 💡 Geschäftsbereich
 
@@ -166,7 +166,7 @@ collection · Titel-Feld: `title`
 | `specs` | single_block | ✓ | ✓ | Freie Attributzeilen, die am Seitenende als Tabelle erscheinen, z. B. Architekt, Planer, Bauherrschaft. |
 | `related_references` | links |  |  | → `reference` — Optional. Leer lassen — verwandte Referenzen werden automatisch aus den Attributen ermittelt. Hier gesetzte Referenzen stehen zuoberst, der Rest wird automatisch aufgefüllt (max. 3 Karten). |
 | `seo` | seo |  | ✓ |  |
-| `sections` | rich_text |  | ✓ | Blöcke: `richtext_block`, `media_block`, `external_video_block` |
+| `sections` | rich_text |  | ✓ | Blöcke: `richtext_block`, `media_block`, `image_compare_section`, `external_video_block` |
 
 ### `person` — 👤 Person
 
@@ -323,6 +323,7 @@ Einsatz: **Header** = erlaubt im `header`-Feld (genau 1 Block) · **Section** = 
 | `icon_element` | 🔣 Icon Element | Baustein |
 | `pikto_section` | 🔣 Pikto | Section |
 | `media_block` | 🖼️ Media Block | Section |
+| `image_compare_section` | 🔍 Bildvergleich | Section |
 | `external_video_block` | ▶️ External Video | Section |
 | `media_slider_slide` | 🖼️ Media Slider Slide | Baustein |
 | `media_slider_section` | 🎞️ Media Slider | Section |
@@ -633,6 +634,19 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`, `reference
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
 | `media` | file | ✓ |  |  |
+| `layout` | string |  |  | Werte: `full_bleed` · `contained` · Default: `contained` |
+| `caption` | string |  |  |  |
+
+### `image_compare_section` — 🔍 Bildvergleich
+
+block · Einsatz: Section (`home_page.sections`, `cms_page.sections`, `reference.sections`) · Vorher/Nachher-Vergleich: Beide Bilder liegen übereinander, die Trennlinie wird per Maus, Touch oder Pfeiltasten verschoben.
+
+| Feld | Typ | Pflicht | Lok | Details |
+| --- | --- | :-: | :-: | --- |
+| `before_image` | file | ✓ |  | Bestimmt das Seitenverhältnis des Rahmens — das zweite Bild wird darauf zugeschnitten. |
+| `after_image` | file | ✓ |  |  |
+| `before_label` | string |  |  | Optional, z. B. «Vorher». Leer lassen, wenn keine Beschriftung im Bild stehen soll. |
+| `after_label` | string |  |  |  |
 | `layout` | string |  |  | Werte: `full_bleed` · `contained` · Default: `contained` |
 | `caption` | string |  |  |  |
 
