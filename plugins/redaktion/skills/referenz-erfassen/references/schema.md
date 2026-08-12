@@ -323,7 +323,7 @@ Einsatz: **Header** = erlaubt im `header`-Feld (genau 1 Block) · **Section** = 
 | `icon_element` | 🔣 Icon Element | Baustein |
 | `pikto_section` | 🔣 Pikto | Section |
 | `media_block` | 🖼️ Media Block | Section |
-| `image_compare_section` | 🔍 Bildvergleich | Section |
+| `image_compare_section` | 🔍 Image Comparison | Section |
 | `external_video_block` | ▶️ External Video | Section |
 | `media_slider_slide` | 🖼️ Media Slider Slide | Baustein |
 | `media_slider_section` | 🎞️ Media Slider | Section |
@@ -637,7 +637,7 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`, `reference
 | `layout` | string |  |  | Werte: `full_bleed` · `contained` · Default: `contained` |
 | `caption` | string |  |  |  |
 
-### `image_compare_section` — 🔍 Bildvergleich
+### `image_compare_section` — 🔍 Image Comparison
 
 block · Einsatz: Section (`home_page.sections`, `cms_page.sections`, `reference.sections`) · Vorher/Nachher-Vergleich: Beide Bilder liegen übereinander, die Trennlinie wird per Maus, Touch oder Pfeiltasten verschoben.
 
