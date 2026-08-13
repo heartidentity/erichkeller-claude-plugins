@@ -650,6 +650,7 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`, `reference
 | `before_label` | string |  |  | Optional, z. B. «Vorher». Leer lassen, wenn keine Beschriftung im Bild stehen soll. |
 | `after_label` | string |  |  |  |
 | `layout` | string |  |  | Werte: `full_bleed` · `contained` · Default: `contained` |
+| `mobile_crop` | integer |  |  | Default: `0` — Prozent, die auf schmalen Bildschirmen links und rechts weggeschnitten werden, damit ein breites Bild auf dem Handy nicht zum Streifen wird. Der Wert gilt ab 500px Bildschirmbreite abwärts und läuft nach oben stufenlos auf 0 zurück (ab 1300px kein Beschnitt). 0 = aus. |
 | `caption` | string |  |  |  |
 
 ### `external_video_block` — ▶️ External Video
