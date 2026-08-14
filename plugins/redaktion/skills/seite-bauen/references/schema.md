@@ -324,6 +324,7 @@ Einsatz: **Header** = erlaubt im `header`-Feld (genau 1 Block) · **Section** = 
 | `pikto_section` | 🔣 Pikto | Section |
 | `media_block` | 🖼️ Media Block | Section |
 | `image_compare_section` | 🔍 Image Comparison | Section |
+| `image_hotspot` | 📍 Bildpunkt | Baustein |
 | `external_video_block` | ▶️ External Video | Section |
 | `media_slider_slide` | 🖼️ Media Slider Slide | Baustein |
 | `media_slider_section` | 🎞️ Media Slider | Section |
@@ -363,7 +364,7 @@ Einsatz: **Header** = erlaubt im `header`-Feld (genau 1 Block) · **Section** = 
 
 ### `nav_link` — 🔗 Link
 
-block · Einsatz: Baustein (`product.links`, `website.legal_links`, `hero_slide.link`, `page_intro.link`, `statement_media_section.link`, `content_with_media_section.links`, `text_column.link`, `text_columns_section.link`, `reference_teasers_section.link`, `teaser_collection_section.link`, `link_list.link`, `link_list.items`, `job_listing_section.link`, `solution_slide.link`, `downloads_section.link`, `content_tab.link`)
+block · Einsatz: Baustein (`product.links`, `website.legal_links`, `hero_slide.link`, `page_intro.link`, `statement_media_section.link`, `content_with_media_section.links`, `text_column.link`, `text_columns_section.link`, `image_hotspot.link`, `reference_teasers_section.link`, `teaser_collection_section.link`, `link_list.link`, `link_list.items`, `job_listing_section.link`, `solution_slide.link`, `downloads_section.link`, `content_tab.link`)
 
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
@@ -646,12 +647,27 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`, `reference
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
 | `before_image` | file | ✓ |  | Bestimmt das Seitenverhältnis des Rahmens — das zweite Bild wird darauf zugeschnitten. |
+| `before_hotspots` | rich_text |  |  | Blöcke: `image_hotspot` — Marker auf dem linken Bild. Neue Punkte hier erfassen und anschliessend direkt im Bild oberhalb an die richtige Stelle ziehen. |
 | `after_image` | file | ✓ |  |  |
+| `after_hotspots` | rich_text |  |  | Blöcke: `image_hotspot` — Marker auf dem rechten Bild. |
 | `before_label` | string |  |  | Optional, z. B. «Vorher». Leer lassen, wenn keine Beschriftung im Bild stehen soll. |
 | `after_label` | string |  |  |  |
 | `layout` | string |  |  | Werte: `full_bleed` · `contained` · Default: `contained` |
 | `mobile_crop` | integer |  |  | Default: `0` — Prozent, die auf schmalen Bildschirmen links und rechts weggeschnitten werden, damit ein breites Bild auf dem Handy nicht zum Streifen wird. Der Wert gilt ab 500px Bildschirmbreite abwärts und läuft nach oben stufenlos auf 0 zurück (ab 1300px kein Beschnitt). 0 = aus. |
 | `caption` | string |  |  |  |
+
+### `image_hotspot` — 📍 Bildpunkt
+
+block · Einsatz: Baustein (`image_compare_section.before_hotspots`, `image_compare_section.after_hotspots`) · Marker auf dem Bild. Er erscheint erst, sobald die Trennlinie ihn ganz freigegeben hat.
+
+| Feld | Typ | Pflicht | Lok | Details |
+| --- | --- | :-: | :-: | --- |
+| `label` | string | ✓ |  | Kurzer Text auf dem Marker selbst, z. B. «Klimadecke». Lange Beschriftungen machen den Marker breit und verdecken das Bild. |
+| `title` | string |  |  | Überschrift der Karte, die ein Klick auf den Marker öffnet. |
+| `text` | text |  |  |  |
+| `link` | rich_text |  |  | Blöcke: `nav_link` · max. 1 |
+| `pos_x` | float |  |  | Default: `50` — Wird beim Ziehen des Markers im Bild oberhalb gesetzt — 0 = linker Bildrand, 100 = rechter. |
+| `pos_y` | float |  |  | Default: `50` — 0 = oberer Bildrand, 100 = unterer. |
 
 ### `external_video_block` — ▶️ External Video
 
