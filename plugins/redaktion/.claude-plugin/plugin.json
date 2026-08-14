@@ -1,7 +1,7 @@
 {
   "name": "redaktion",
   "description": "Redaktions-Assistent für erichkeller.ch: Referenzen erfassen und CMS-Seiten bauen, direkt in DatoCMS (via MCP).",
-  "version": "0.4.15",
+  "version": "0.4.16",
   "author": {
     "name": "Heart Identity",
     "url": "https://heart.zuerich"

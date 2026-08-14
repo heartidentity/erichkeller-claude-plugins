@@ -263,6 +263,7 @@ singleton
 | `header_navigation` | rich_text |  | ✓ | Blöcke: `menu_group` |
 | `footer_info` | structured_text |  | ✓ | Record-Links: `cms_page`, `reference`, `product` · Headings:  · Marks: strong, underline, strikethrough · Nodes: list, link |
 | `footer_navigation` | rich_text |  | ✓ | Blöcke: `menu_group` |
+| `footer_newsletter_link` | rich_text |  | ✓ | Blöcke: `nav_link` · max. 1 — Call-to-Action oben rechts im Footer, neben dem Logo. Ohne Eintrag wird kein CTA angezeigt. |
 | `legal_links` | rich_text |  | ✓ | Blöcke: `nav_link` |
 | `pcon_contact_form` | rich_text |  | ✓ | Blöcke: `hubspot_form_section` · max. 1 — HubSpot-Formular, das nach einer Konfigurationsanfrage im pCon-Konfigurator eingeblendet wird. |
 
@@ -364,7 +365,7 @@ Einsatz: **Header** = erlaubt im `header`-Feld (genau 1 Block) · **Section** = 
 
 ### `nav_link` — 🔗 Link
 
-block · Einsatz: Baustein (`product.links`, `website.legal_links`, `hero_slide.link`, `page_intro.link`, `statement_media_section.link`, `content_with_media_section.links`, `text_column.link`, `text_columns_section.link`, `image_hotspot.link`, `reference_teasers_section.link`, `teaser_collection_section.link`, `link_list.link`, `link_list.items`, `job_listing_section.link`, `solution_slide.link`, `downloads_section.link`, `content_tab.link`)
+block · Einsatz: Baustein (`product.links`, `website.footer_newsletter_link`, `website.legal_links`, `hero_slide.link`, `page_intro.link`, `statement_media_section.link`, `content_with_media_section.links`, `text_column.link`, `text_columns_section.link`, `image_hotspot.link`, `reference_teasers_section.link`, `teaser_collection_section.link`, `link_list.link`, `link_list.items`, `job_listing_section.link`, `solution_slide.link`, `downloads_section.link`, `content_tab.link`)
 
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
