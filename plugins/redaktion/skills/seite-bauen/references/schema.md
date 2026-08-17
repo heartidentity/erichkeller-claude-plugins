@@ -230,7 +230,7 @@ collection · manuell sortierbar · Titel-Feld: `name`
 | `street` | string |  |  | z. B. {Romanshornstrasse 17} |
 | `postal_code` | string |  |  | z. B. {8583} |
 | `city` | string |  |  | z. B. {Sulgen} |
-| `country` | string |  | ✓ | Nur für Standorte im Ausland — bei Schweizer Adressen leer lassen. Z. B. {Niederlande}. |
+| `country` | string | ✓ | ✓ | Immer erfassen, auch bei Schweizer Standorten — z. B. {Schweiz} oder {Niederlande}. Wird als letzte Adresszeile ausgegeben. |
 | `phone` | string |  |  | Internationales Format, z. B. {+41 71 644 88 88} — wird als tel:-Link ausgegeben. |
 | `email` | string |  |  | Optionale Adresse für diesen Standort, z. B. {info@partner.ch} — wird als mailto:-Link ausgegeben. |
 | `website_url` | string |  |  | Optionaler Link auf die eigene Website dieses Standorts (vor allem bei Partnern). Vollständige URL inkl. {https://}. |
