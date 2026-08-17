@@ -653,6 +653,7 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`, `reference
 | `after_hotspots` | rich_text |  |  | Blöcke: `image_hotspot` — Marker auf dem rechten Bild. |
 | `before_label` | string |  |  | Optional, z. B. «Vorher». Leer lassen, wenn keine Beschriftung im Bild stehen soll. |
 | `after_label` | string |  |  |  |
+| `label_position` | string |  |  | Werte: `corners` · `top_center` · `bottom_center` · Default: `corners` — Mittig heisst: Beide Beschriftungen liegen an derselben Stelle und werden von der Trennlinie mitgeschnitten wie das Bild — links davon steht die eine, rechts die andere. |
 | `layout` | string |  |  | Werte: `full_bleed` · `contained` · Default: `contained` |
 | `mobile_crop` | integer |  |  | Default: `0` — Prozent, die auf schmalen Bildschirmen links und rechts weggeschnitten werden, damit ein breites Bild auf dem Handy nicht zum Streifen wird. Der Wert gilt ab 500px Bildschirmbreite abwärts und läuft nach oben stufenlos auf 0 zurück (ab 1300px kein Beschnitt). 0 = aus. |
 | `caption` | string |  |  |  |
