@@ -1010,7 +1010,7 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`)
 | `legend` | string |  |  | Bezeichnung der Tab-Gruppe für Screenreader (visuell nicht sichtbar). Leer: es gilt ein Standardtext. |
 | `base_image` | file |  |  | Nur Variante Hotspots: das neutrale Bild, solange kein Marker gewählt ist. Die Tab-Bilder werden darüber eingeblendet und brauchen denselben Bildausschnitt. Die Marker der Tabs werden direkt auf diesem Bild platziert. |
 | `tabs` | rich_text |  |  | Blöcke: `content_tab` |
-| `mobile_crop` | integer |  |  | Default: `0` — Nur Variante Tab-Navigation. Prozent, die auf schmalen Bildschirmen links und rechts weggeschnitten werden, damit ein breites Medium auf dem Handy nicht zum Streifen zwischen Navigation und Karte wird. Der Wert gilt für alle Tab-Medien, ab 500px Bildschirmbreite abwärts, und läuft nach oben stufenlos auf 0 zurück (ab 1300px kein Beschnitt). Beschnitten wird nur so weit, bis das Medium die Bandhöhe füllt. 0 = aus. |
+| `mobile_crop` | integer |  |  | Default: `0` — Prozent, die auf schmalen Bildschirmen links und rechts weggeschnitten werden, damit ein breites Medium auf dem Handy nicht zum Streifen wird. Gilt für alle Tab-Medien (und in der Variante Hotspots auch fürs Basisbild), ab 500px Bildschirmbreite abwärts, und läuft nach oben stufenlos auf 0 zurück (ab 1300px kein Beschnitt). Variante Tab-Navigation: beschnitten wird nur so weit, bis das Medium die Bandhöhe füllt. Variante Hotspots: Marker im weggeschnittenen Bereich rücken an den Bildrand. 0 = aus. |
 
 ### `flexible_image_setting` — 🎛️ Image Settings
 
