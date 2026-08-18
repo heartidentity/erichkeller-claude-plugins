@@ -995,8 +995,11 @@ block · Einsatz: Baustein (`content_tab_nav_section.tabs`)
 | `title` | string |  |  |  |
 | `text` | text |  |  |  |
 | `link` | rich_text |  |  | Blöcke: `nav_link` · max. 1 |
-| `image` | file | ✓ |  | Variante Hotspots: Der Fokuspunkt des Bildes bestimmt, wo der Marker dieses Tabs auf dem Basisbild sitzt — alle Tab-Bilder brauchen denselben Bildausschnitt wie das Basisbild. |
-| `image_mobile` | file |  |  | Optionales, eigens gewähltes Bild für schmale Hochformat-Bildschirme. |
+| `image` | file | ✓ |  | Videos laufen stumm in Endlosschleife und starten neu, sobald ihr Tab aktiv wird. Variante Hotspots: Das Medium wird über das Basisbild eingeblendet und braucht denselben Bildausschnitt. |
+| `image_mobile` | file |  |  | Optionales, eigens gewähltes Medium für schmale Hochformat-Bildschirme. |
+| `mask` | file |  |  | Optional, gedacht für Videos: ein PNG mit Transparenz, das über das Medium gelegt wird. Transparente Stellen der Maske blenden das Medium aus, damit es weich ausläuft statt hart an der Kante abzuschneiden (Videos können selber keine Transparenz mitbringen). Die Maske im gleichen Seitenverhältnis wie das Medium anlegen; sie wirkt auf Bild und Video gleichermassen. |
+| `pos_x` | float |  |  | Default: `50` — Nur Variante Hotspots. Wird beim Ziehen des Markers auf dem Basisbild gesetzt — 0 = linker Bildrand, 100 = rechter. |
+| `pos_y` | float |  |  | Default: `50` — 0 = oberer Bildrand, 100 = unterer. |
 
 ### `content_tab_nav_section` — 🎛️ Content Tab Nav
 
@@ -1006,7 +1009,7 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`)
 | --- | --- | :-: | :-: | --- |
 | `variant` | string |  |  | Werte: `tab_nav` · `hotspots` · Default: `tab_nav` |
 | `legend` | string |  |  | Bezeichnung der Tab-Gruppe für Screenreader (visuell nicht sichtbar). Leer: es gilt ein Standardtext. |
-| `base_image` | file |  |  | Nur Variante Hotspots: das neutrale Bild, solange kein Marker gewählt ist. Die Tab-Bilder werden darüber eingeblendet und brauchen denselben Bildausschnitt. |
+| `base_image` | file |  |  | Nur Variante Hotspots: das neutrale Bild, solange kein Marker gewählt ist. Die Tab-Bilder werden darüber eingeblendet und brauchen denselben Bildausschnitt. Die Marker der Tabs werden direkt auf diesem Bild platziert. |
 | `base_image_mobile` | file |  |  | Optionales, eigens gewähltes Basisbild für schmale Hochformat-Bildschirme (Variante Hotspots). |
 | `tabs` | rich_text |  |  | Blöcke: `content_tab` |
 
