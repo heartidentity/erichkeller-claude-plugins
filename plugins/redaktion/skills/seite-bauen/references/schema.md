@@ -414,6 +414,7 @@ block · Titel-Feld: `size` · Einsatz: Section (`home_page.sections`, `cms_page
 | --- | --- | :-: | :-: | --- |
 | `size` | string |  |  | Werte: `medium` · `large` · Default: `medium` — Zusätzlicher Abstand zum nächsten Abschnitt. |
 | `background` | string |  |  | Werte: `auto` · `white` · `grey` · Default: `auto` — Weiss/Grau erzwingen die Farbe des Abstands. |
+| `custom_size` | string |  |  | Freier Abstand statt der Grösse oben — sobald hier etwas steht, gilt dieser Wert. Eine Zahl ohne Einheit sind Pixel ({40} = 40px), sonst mit Einheit oder als Rechnung, z. B. {calc(100vw - 20px)}. Negative Werte ({-40}) ziehen den nächsten Abschnitt nach oben. |
 
 ### `hero_slide` — 🖼️ Hero Slide
 
