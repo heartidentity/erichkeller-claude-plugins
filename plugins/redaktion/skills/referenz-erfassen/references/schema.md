@@ -100,7 +100,7 @@ collection · manuell sortierbar · Titel-Feld: `name`
 | --- | --- | :-: | :-: | --- |
 | `name` | string |  | ✓ | Optional — leer lassen: es gilt der Name des verlinkten Produkts. |
 | `product` | link | ✓ |  | → `product` |
-| `external_id` | string | ✓ |  | unique — Z. B. eine ERP- oder Dualoo-Artikelnummer. Muss eindeutig sein — wird beim Klick auf den CTA dieses Modells in das versteckte Feld {talky_produkt_id} des Anfrageformulars geschrieben. |
+| `external_id` | string |  |  | unique — Optional — eine ERP-Artikelnummer, sobald es pro Einheit eine gibt. Muss eindeutig sein. Wird beim Klick auf den CTA dieses Modells in das versteckte Feld {talky_produkt_id} des Anfrageformulars geschrieben. Solange das Feld leer bleibt, identifizieren Name und Spezifikationen die Einheit im Anfrageformular. |
 | `teaser_image` | file |  |  | Optional — leer lassen: es gilt das Teaser-Bild des verlinkten Produkts. |
 | `gallery` | gallery |  |  |  |
 | `specs` | rich_text |  | ✓ | Blöcke: `spec_table` — Attributzeilen, z. B. Aussenfarbe: weiss / Stofffarbe: hellgrau / Bodenbelag: Teppich dunkel / … |
@@ -781,8 +781,8 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`)
 | --- | --- | :-: | :-: | --- |
 | `heading` | string |  |  |  |
 | `intro` | text |  |  |  |
-| `source` | string | ✓ |  | Werte: `references` · `team` · Default: `references` — Welche Sammlung aufgelistet wird. Weitere Quellen können später dazukommen. |
-| `show_filters` | boolean |  |  | Default: `true` — Blendet die Filterleiste über der Liste ein. |
+| `source` | string | ✓ |  | Werte: `references` · `team` · `subpages` · Default: `references` — Welche Sammlung aufgelistet wird. «Unterseiten» listet alle direkten Unterseiten dieser Seite (Bild + Titel) in der Reihenfolge des Seitenbaums. Weitere Quellen können später dazukommen. |
+| `show_filters` | boolean |  |  | Default: `true` — Blendet die Filterleiste über der Liste ein. Nur für Referenzen und Team — «Unterseiten» hat keine Filter. |
 
 ### `contact_cta` — 📞 Contact CTA
 
