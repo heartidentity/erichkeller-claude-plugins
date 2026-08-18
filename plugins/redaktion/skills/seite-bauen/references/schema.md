@@ -837,7 +837,7 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`)
 
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
-| `quotes` | rich_text | ✓ |  | Blöcke: `quote_section` · max. 5 — 1–5 Zitate, einzeln nacheinander gezeigt; beim Scrollen durch die Section wird zum nächsten Zitat übergeblendet. |
+| `quotes` | rich_text | ✓ |  | Blöcke: `quote_section` · max. 5 — 1–5 Zitate, einzeln nacheinander gezeigt; der Slider wechselt automatisch weiter, per Klick auf die Fortschrittsbalken oder Wischen auch von Hand. |
 
 ### `hubspot_prefill` — ▸ Vorauswahl
 
