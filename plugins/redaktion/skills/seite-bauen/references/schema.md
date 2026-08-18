@@ -17,7 +17,6 @@ Sprachen: `de` (Hauptsprache), `en`, `fr`. **Lok ✓** = lokalisiertes Feld: bei
 | `industry` | collection | 🏭 Branche |
 | `project_type` | collection | 🏷️ Raum- / Objekttyp |
 | `project_kind` | collection | 🔨 Projektart |
-| `project_volume` | collection | 💰 Projektvolumen |
 | `reference` | collection | 🏗️ Referenz |
 | `person` | collection | 👤 Person |
 | `department` | collection | 🏢 Abteilung |
@@ -133,15 +132,6 @@ collection · Titel-Feld: `name`
 | `name` | string | ✓ | ✓ |  |
 | `slug` | slug |  | ✓ | abgeleitet aus `name` |
 
-### `project_volume` — 💰 Projektvolumen
-
-collection · manuell sortierbar · Titel-Feld: `name`
-
-| Feld | Typ | Pflicht | Lok | Details |
-| --- | --- | :-: | :-: | --- |
-| `name` | string | ✓ | ✓ |  |
-| `slug` | slug |  | ✓ | abgeleitet aus `name` |
-
 ### `reference` — 🏗️ Referenz
 
 collection · Titel-Feld: `title`
@@ -156,11 +146,8 @@ collection · Titel-Feld: `title`
 | `project_types` | links |  |  | → `project_type` |
 | `industries` | links |  |  | → `industry` |
 | `product_families` | links |  |  | → `product_family` — Produktfamilien, die in dieser Referenz eingesetzt sind — definieren auch den Geschäftsbereich. |
-| `solutions` | links |  |  | → `solution` — DEPRECATED — der Geschäftsbereich ergibt sich neu aus den Produktfamilien. Feld wird nach der Umstellung entfernt. |
-| `products` | links |  |  | → `product` — DEPRECATED — Referenzen verlinken neu Produktfamilien statt einzelne Produkte. Feld wird nach der Umstellung entfernt. |
 | `project_kinds` | links |  |  | → `project_kind` — Neubau, Umbau, … — Kombinationen möglich. |
 | `year` | integer |  |  | Jahr der Fertigstellung. |
-| `volume` | link |  |  | → `project_volume` |
 | `location` | string |  | ✓ | Freitext, z. B. {Zürich}. |
 | `rating` | string |  |  | Werte: `1` · `2` · `3` — Interne redaktionelle Bewertung — erscheint nicht auf der Website. |
 | `specs` | single_block | ✓ | ✓ | Freie Attributzeilen, die am Seitenende als Tabelle erscheinen, z. B. Architekt, Planer, Bauherrschaft. |
