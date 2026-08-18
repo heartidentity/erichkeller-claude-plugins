@@ -991,11 +991,11 @@ block · Einsatz: Baustein (`content_tab_nav_section.tabs`)
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
 | `label` | string | ✓ |  |  |
-| `operator` | string |  |  | Optionales dekoratives Verbindungszeichen vor diesem Tab in der Navigation, z. B. {=} oder {+} (Fall Talky Village). |
 | `title` | string |  |  |  |
 | `text` | text |  |  |  |
 | `link` | rich_text |  |  | Blöcke: `nav_link` · max. 1 |
 | `image` | file | ✓ |  | Videos laufen stumm in Endlosschleife und starten neu, sobald ihr Tab aktiv wird. Variante Hotspots: Das Medium wird über das Basisbild eingeblendet und braucht denselben Bildausschnitt. |
+| `operator` | string |  |  | Optionales dekoratives Verbindungszeichen vor diesem Tab in der Navigation, z. B. {=} oder {+} (Fall Talky Village). |
 | `mask` | file |  |  | Optional, gedacht für Videos: ein PNG mit Transparenz, das über das Medium gelegt wird. Transparente Stellen der Maske blenden das Medium aus, damit es weich ausläuft statt hart an der Kante abzuschneiden (Videos können selber keine Transparenz mitbringen). Die Maske im gleichen Seitenverhältnis wie das Medium anlegen; sie wirkt auf Bild und Video gleichermassen. |
 | `pos_x` | float |  |  | Default: `50` — Nur Variante Hotspots. Wird beim Ziehen des Markers auf dem Basisbild gesetzt — 0 = linker Bildrand, 100 = rechter. |
 | `pos_y` | float |  |  | Default: `50` — 0 = oberer Bildrand, 100 = unterer. |
