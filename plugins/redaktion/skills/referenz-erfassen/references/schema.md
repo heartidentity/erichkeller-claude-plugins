@@ -85,9 +85,9 @@ collection · Titel-Feld: `name`
 | `solution` | link |  |  | → `solution` — DEPRECATED — der Geschäftsbereich ergibt sich neu aus der Produktfamilie. Feld wird nach der Umstellung entfernt. |
 | `teaser_image` | file |  |  |  |
 | `body` | structured_text |  | ✓ | Blöcke: `spec_table`, `download_item` · Record-Links: `cms_page`, `reference`, `product` · Headings: h3–h6 · Marks: strong, underline, strikethrough · Nodes: heading, list, link, blockquote, itemLink |
-| `specs` | text |  |  | Z. B. {Für 1 Person / Aussenmasse: … / Innenmasse: …} |
-| `links` | rich_text |  |  | Blöcke: `nav_link` — Optionale Links im Text, z. B. {Verfügbare Modelle} oder {Konfigurator}. |
-| `accordion_items` | rich_text |  |  | Blöcke: `accordion_item` |
+| `specs` | text |  | ✓ | Z. B. {Für 1 Person / Aussenmasse: … / Innenmasse: …} |
+| `links` | rich_text |  | ✓ | Blöcke: `nav_link` — Optionale Links im Text, z. B. {Verfügbare Modelle} oder {Konfigurator}. |
+| `accordion_items` | rich_text |  | ✓ | Blöcke: `accordion_item` |
 | `gallery` | gallery |  |  |  |
 | `seo` | seo |  | ✓ |  |
 
@@ -260,7 +260,7 @@ collection · manuell sortierbar
 
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
-| `source` | string | ✓ |  |  |
+| `source` | string | ✓ |  | Exakter Pfad {/a/b}, Wildcard {/a/*} (mit :splat im Ziel) oder Pfad mit Query {/a.php?x=y}. Im Query steht {*} für einen beliebigen Rest, z.B. {?area=climate-*}. |
 | `target_type` | string | ✓ |  | Werte: `page` · `url` · `path` |
 | `target_page` | link |  |  | → `cms_page`, `home_page` |
 | `target_url` | string |  |  |  |
