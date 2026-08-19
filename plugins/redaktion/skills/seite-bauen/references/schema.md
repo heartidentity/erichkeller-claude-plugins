@@ -84,7 +84,7 @@ collection · Titel-Feld: `name`
 | `product_family` | link |  |  | → `product_family` — Die Familie, zu der dieses Produkt gehört — definiert auch den Geschäftsbereich. |
 | `solution` | link |  |  | → `solution` — DEPRECATED — der Geschäftsbereich ergibt sich neu aus der Produktfamilie. Feld wird nach der Umstellung entfernt. |
 | `teaser_image` | file |  |  |  |
-| `body` | structured_text |  | ✓ | Blöcke: `spec_table`, `download_item` · Record-Links: `cms_page`, `reference`, `product` · Headings: h3–h6 · Marks: strong, underline, strikethrough · Nodes: heading, list, link, blockquote |
+| `body` | structured_text |  | ✓ | Blöcke: `spec_table`, `download_item` · Record-Links: `cms_page`, `reference`, `product` · Headings: h3–h6 · Marks: strong, underline, strikethrough · Nodes: heading, list, link, blockquote, itemLink |
 | `specs` | text |  |  | Z. B. {Für 1 Person / Aussenmasse: … / Innenmasse: …} |
 | `links` | rich_text |  |  | Blöcke: `nav_link` — Optionale Links im Text, z. B. {Verfügbare Modelle} oder {Konfigurator}. |
 | `accordion_items` | rich_text |  |  | Blöcke: `accordion_item` |
@@ -103,7 +103,7 @@ collection · manuell sortierbar · Titel-Feld: `name`
 | `teaser_image` | file |  |  | Optional — leer lassen: es gilt das Teaser-Bild des verlinkten Produkts. |
 | `gallery` | gallery |  |  |  |
 | `specs` | rich_text |  | ✓ | Blöcke: `spec_table` — Attributzeilen, z. B. Aussenfarbe: weiss / Stofffarbe: hellgrau / Bodenbelag: Teppich dunkel / … |
-| `description` | structured_text |  | ✓ | Record-Links: `cms_page`, `reference`, `product` · Headings: h3–h6 · Marks: strong, underline, strikethrough · Nodes: heading, list, link, blockquote — Freitext, z. B. Zustand, Standort, Lieferhinweis. |
+| `description` | structured_text |  | ✓ | Record-Links: `cms_page`, `reference`, `product` · Headings: h3–h6 · Marks: strong, underline, strikethrough · Nodes: heading, list, link, blockquote, itemLink — Freitext, z. B. Zustand, Standort, Lieferhinweis. |
 
 ### `industry` — 🏭 Branche
 
@@ -248,7 +248,7 @@ singleton
 | `contact_page` | link |  |  | → `cms_page` — Globale Kontakt- bzw. Formularseite — Ziel für Contact-CTA-Buttons ohne Kontaktgruppe. |
 | `contact_group_page` | link |  |  | → `cms_page` — Formularseite für Contact CTAs mit Kontaktgruppe. Der Formularwert der Gruppe wird als {?contact_group=wert} angehängt. Leer: es gilt die normale Kontaktseite. |
 | `header_navigation` | rich_text |  | ✓ | Blöcke: `menu_group` |
-| `footer_info` | structured_text |  | ✓ | Record-Links: `cms_page`, `reference`, `product` · Headings:  · Marks: strong, underline, strikethrough · Nodes: list, link |
+| `footer_info` | structured_text |  | ✓ | Record-Links: `cms_page`, `reference`, `product` · Headings:  · Marks: strong, underline, strikethrough · Nodes: list, link, itemLink |
 | `footer_navigation` | rich_text |  | ✓ | Blöcke: `menu_group` |
 | `footer_newsletter_link` | rich_text |  | ✓ | Blöcke: `nav_link` · max. 1 — Call-to-Action oben rechts im Footer, neben dem Logo. Ohne Eintrag wird kein CTA angezeigt. |
 | `legal_links` | rich_text |  | ✓ | Blöcke: `nav_link` |
@@ -453,7 +453,7 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`)
 | --- | --- | :-: | :-: | --- |
 | `kicker` | string |  |  | Optionale zweite Titelzeile, z. B. {Der Design Tisch}. |
 | `heading` | string | ✓ |  |  |
-| `body` | structured_text |  |  | Blöcke: `spec_table` · Record-Links: `cms_page`, `reference`, `product` · Headings: h3–h6 · Marks: strong, underline, strikethrough · Nodes: heading, list, link, blockquote — Ein Absatz im Zitat-Format wird als grosser Lead-Text ausgegeben. |
+| `body` | structured_text |  |  | Blöcke: `spec_table` · Record-Links: `cms_page`, `reference`, `product` · Headings: h3–h6 · Marks: strong, underline, strikethrough · Nodes: heading, list, link, blockquote, itemLink — Ein Absatz im Zitat-Format wird als grosser Lead-Text ausgegeben. |
 | `links` | rich_text |  |  | Blöcke: `nav_link` · max. 1 — Ein einzelner Link. Das Erscheinungsbild wird unten gewählt. |
 | `link_style` | string |  |  | Werte: `link` · `cta` · Default: `link` |
 | `media` | file | ✓ |  | Ungefähr quadratisch. Videos laufen stumm und automatisch, ohne Bedienelemente. |
@@ -468,7 +468,7 @@ block · Einsatz: Baustein (`sticky_scroll_section.entries`)
 | --- | --- | :-: | :-: | --- |
 | `year` | string |  |  | Optionale Jahreszahl, z. B. {2025}. |
 | `heading` | string | ✓ |  |  |
-| `body` | structured_text |  |  | Blöcke: `spec_table` · Record-Links: `cms_page`, `reference`, `product` · Headings: h3–h6 · Marks: strong, underline, strikethrough · Nodes: heading, list, link, blockquote |
+| `body` | structured_text |  |  | Blöcke: `spec_table` · Record-Links: `cms_page`, `reference`, `product` · Headings: h3–h6 · Marks: strong, underline, strikethrough · Nodes: heading, list, link, blockquote, itemLink |
 | `media` | file | ✓ |  | Erscheint in der Sticky-Spalte, solange dieser Eintrag im Blickfeld ist. |
 
 ### `sticky_scroll_section` — 📜 Sticky Scroll Text-Media
@@ -507,7 +507,7 @@ block · Einsatz: Baustein (`text_columns_section.columns`)
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
 | `title` | string | ✓ |  |  |
-| `text` | structured_text |  |  | Record-Links: `cms_page`, `reference`, `product` · Headings:  · Marks: strong, underline, strikethrough · Nodes: link |
+| `text` | structured_text |  |  | Record-Links: `cms_page`, `reference`, `product` · Headings:  · Marks: strong, underline, strikethrough · Nodes: link, itemLink |
 | `link` | rich_text |  |  | Blöcke: `nav_link` · max. 1 |
 
 ### `text_columns_section` — 📑 Text Columns
@@ -526,7 +526,7 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`, `reference
 
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
-| `body` | structured_text |  |  | Blöcke: `accordion`, `spec_table`, `anchor`, `download_item` · Record-Links: `cms_page`, `reference`, `product` · Headings: h2–h6 · Marks: strong, underline, strikethrough · Nodes: heading, list, link, blockquote |
+| `body` | structured_text |  |  | Blöcke: `accordion`, `spec_table`, `anchor`, `download_item` · Record-Links: `cms_page`, `reference`, `product` · Headings: h2–h6 · Marks: strong, underline, strikethrough · Nodes: heading, list, link, blockquote, itemLink |
 
 ### `accordion_item` — ➕ Accordion Item
 
@@ -535,7 +535,7 @@ block · Einsatz: Baustein (`product.accordion_items`, `accordion.items`)
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
 | `title` | string | ✓ |  |  |
-| `content` | structured_text |  |  | Blöcke: `spec_table`, `anchor`, `download_item` · Record-Links: `cms_page`, `reference`, `product` · Headings: h3–h6 · Marks: strong, underline, strikethrough · Nodes: heading, list, link, blockquote |
+| `content` | structured_text |  |  | Blöcke: `spec_table`, `anchor`, `download_item` · Record-Links: `cms_page`, `reference`, `product` · Headings: h3–h6 · Marks: strong, underline, strikethrough · Nodes: heading, list, link, blockquote, itemLink |
 
 ### `accordion` — ➕ Accordion
 
@@ -570,7 +570,7 @@ block · Einsatz: Baustein (`stats_section.items`)
 | --- | --- | :-: | :-: | --- |
 | `value` | string | ✓ |  |  |
 | `caption` | string |  |  |  |
-| `text` | structured_text |  |  | Record-Links: `cms_page`, `reference`, `product` · Headings:  · Marks: strong, underline, strikethrough · Nodes: link |
+| `text` | structured_text |  |  | Record-Links: `cms_page`, `reference`, `product` · Headings:  · Marks: strong, underline, strikethrough · Nodes: link, itemLink |
 | `color` | string |  |  | Werte: `black` · `green` · `blue` · `red` · Default: `green` — Akzentfarbe der grossen Zahl. |
 
 ### `stats_section` — 📊 Stats
@@ -608,7 +608,7 @@ block · Einsatz: Baustein (`pikto_section.items`)
 | --- | --- | :-: | :-: | --- |
 | `icon` | file |  |  | Einfarbiges Linien-Icon (SVG), ca. 64×64. |
 | `title` | string | ✓ |  |  |
-| `text` | structured_text |  |  | Record-Links: `cms_page`, `reference`, `product` · Headings:  · Marks: strong, underline, strikethrough · Nodes: link |
+| `text` | structured_text |  |  | Record-Links: `cms_page`, `reference`, `product` · Headings:  · Marks: strong, underline, strikethrough · Nodes: link, itemLink |
 
 ### `pikto_section` — 🔣 Pikto
 
@@ -788,7 +788,7 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`)
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
 | `heading` | string |  |  |  |
-| `text` | structured_text |  |  | Record-Links: `cms_page`, `reference`, `product` · Headings:  · Marks: strong, underline, strikethrough · Nodes: link |
+| `text` | structured_text |  |  | Record-Links: `cms_page`, `reference`, `product` · Headings:  · Marks: strong, underline, strikethrough · Nodes: link, itemLink |
 | `link` | rich_text |  |  | Blöcke: `nav_link` · max. 1 |
 | `items` | rich_text |  |  | Blöcke: `nav_link` |
 
@@ -852,7 +852,7 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`)
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
 | `heading` | string |  |  |  |
-| `text` | structured_text |  |  | Record-Links: `cms_page`, `reference`, `product` · Headings:  · Marks: strong, underline, strikethrough · Nodes: link |
+| `text` | structured_text |  |  | Record-Links: `cms_page`, `reference`, `product` · Headings:  · Marks: strong, underline, strikethrough · Nodes: link, itemLink |
 | `link` | rich_text |  |  | Blöcke: `nav_link` · max. 1 — Mit Link (z. B. auf die vollständige Jobseite) wird der Block zum Teaser: Es erscheinen nur die 3 neusten Jobs. Ohne Link werden alle offenen Stellen gelistet. |
 | `empty_note` | string |  |  | Erscheint statt der Liste, wenn keine Jobs publiziert sind. |
 
