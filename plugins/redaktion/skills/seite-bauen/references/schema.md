@@ -486,7 +486,7 @@ block · Einsatz: Baustein (`tabs_with_media_section.items`)
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
 | `title` | string | ✓ |  |  |
-| `text` | structured_text |  |  | Record-Links: `cms_page`, `reference`, `product` · Headings:  · Marks: strong, underline, strikethrough · Nodes:  |
+| `text` | structured_text |  |  | Record-Links: `cms_page`, `reference`, `product` · Headings:  · Marks: strong, underline, strikethrough · Nodes: link, itemLink |
 | `media` | file |  |  |  |
 | `downloads` | rich_text |  |  | Blöcke: `download_item` — Optionale Download-Links, die unter dem Text des aktiven Tabs erscheinen. |
 
