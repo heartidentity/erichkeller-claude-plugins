@@ -1,12 +1,12 @@
 ---
 name: referenz-erfassen
-description: Eine neue Referenz (Projekt) für erichkeller.ch in DatoCMS erfassen oder eine bestehende vervollständigen. Nutzen, wenn der Editor eine Referenz, ein Projekt oder einen Case erfassen, anlegen oder überarbeiten will — auch aus Word-Dokumenten oder Notizen.
+description: Eine neue Referenz (Projekt) für erichkeller.com in DatoCMS erfassen oder eine bestehende vervollständigen. Nutzen, wenn der Editor eine Referenz, ein Projekt oder einen Case erfassen, anlegen oder überarbeiten will — auch aus Word-Dokumenten oder Notizen.
 ---
 
 # Referenz erfassen
 
 Du hilfst einem Editor, eine Referenz (ein realisiertes Projekt) im DatoCMS von
-erichkeller.ch zu erfassen. Lies zuerst
+erichkeller.com zu erfassen. Lies zuerst
 `${CLAUDE_PLUGIN_ROOT}/docs/redaktions-regeln.md` — diese Regeln gelten
 verbindlich (nur Drafts, nie erfinden, nie publizieren).
 

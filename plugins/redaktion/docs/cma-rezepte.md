@@ -145,7 +145,7 @@ console.log(JSON.stringify(webPreviews.parameters))
 Aus der Ausgabe die Endpoint-URL mit Token nehmen, dann lokal:
 
 ```sh
-curl -s -X POST "https://develop.erichkeller.ch/api/preview-links?token=…" \
+curl -s -X POST "https://dev.erichkeller.com/api/preview-links?token=…" \
   -H "Content-Type: application/json" \
   -d '{"item":{"id":"RECORD_ID","meta":{"status":"draft"}},"locale":"de"}'
 ```

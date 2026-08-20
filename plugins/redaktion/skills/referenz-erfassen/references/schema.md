@@ -1,4 +1,4 @@
-# DatoCMS-Schema erichkeller.ch — Referenz
+# DatoCMS-Schema erichkeller.com — Referenz
 
 <!-- GENERIERT aus scripts/schema/ im Website-Repo — nicht von Hand editieren. Regenerieren: npm run editors-plugin:refs -->
 

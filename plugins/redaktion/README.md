@@ -1,4 +1,4 @@
-# Redaktions-Plugin für erichkeller.ch
+# Redaktions-Plugin für erichkeller.com
 
 Claude-Plugin für Editoren: Referenzen erfassen und CMS-Seiten bauen, direkt
 in DatoCMS (via offiziellem DatoCMS-MCP, OAuth im Browser).

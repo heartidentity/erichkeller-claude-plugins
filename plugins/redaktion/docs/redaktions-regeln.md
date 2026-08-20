@@ -1,6 +1,6 @@
 # Redaktionsregeln (gelten für alle Skills)
 
-Diese Regeln gelten immer, wenn du für die Redaktion von erichkeller.ch in
+Diese Regeln gelten immer, wenn du für die Redaktion von erichkeller.com in
 DatoCMS arbeitest — egal über welchen Skill.
 
 ## Grundhaltung
@@ -41,7 +41,7 @@ DatoCMS arbeitest — egal über welchen Skill.
 Nach dem Anlegen/Ändern zeigst du dem Editor den Vorschau-Link direkt in
 deiner Antwort. So kommst du an die Links:
 
-1. Der Endpoint `https://develop.erichkeller.ch/api/preview-links` liefert
+1. Der Endpoint `https://dev.erichkeller.com/api/preview-links` liefert
    fertige Links. Aufruf: `POST` mit JSON-Body
    `{ "item": { "id": "<record-id>", "meta": { "status": "<status>" } }, "locale": "de" }`.
    Er ist mit `?token=…` geschützt — den Token findest du via DatoCMS-MCP in

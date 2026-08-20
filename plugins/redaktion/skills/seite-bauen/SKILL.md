@@ -1,11 +1,11 @@
 ---
 name: seite-bauen
-description: Eine CMS-Seite für erichkeller.ch in DatoCMS aufbauen oder umbauen — Header und Sections aus dem Block-Katalog zusammenstellen. Nutzen, wenn der Editor eine Seite anlegen, aufbauen, erweitern oder umstrukturieren will.
+description: Eine CMS-Seite für erichkeller.com in DatoCMS aufbauen oder umbauen — Header und Sections aus dem Block-Katalog zusammenstellen. Nutzen, wenn der Editor eine Seite anlegen, aufbauen, erweitern oder umstrukturieren will.
 ---
 
 # Seite bauen
 
-Du hilfst einem Editor, eine Seite (`cms_page`) im DatoCMS von erichkeller.ch
+Du hilfst einem Editor, eine Seite (`cms_page`) im DatoCMS von erichkeller.com
 aufzubauen. Lies zuerst `${CLAUDE_PLUGIN_ROOT}/docs/redaktions-regeln.md` —
 diese Regeln gelten verbindlich (nur Drafts, nie erfinden, nie publizieren).
 
