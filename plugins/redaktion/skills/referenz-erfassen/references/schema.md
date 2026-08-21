@@ -27,6 +27,7 @@ Sprachen: `de` (Hauptsprache), `en`, `fr`. **Lok ✓** = lokalisiertes Feld: bei
 | `website` | singleton | ⚙️ Website |
 | `redirect` | collection | ↪️ Redirect |
 | `slide_deck` | collection | 🎞️ Slide-Deck |
+| `job_download` | collection | 💼 Job-Download |
 
 ### `home_page` — 🏠 Startseite
 
@@ -276,6 +277,16 @@ collection · manuell sortierbar · Titel-Feld: `title`
 | `title` | string | ✓ | ✓ |  |
 | `solution` | link |  |  | → `solution` — Gruppiert das Deck in der Auswahl des Konfigurators. Leer lassen für allgemeine Decks. |
 | `slides` | gallery |  | ✓ | Ein Bild pro Slide, 16:9 {1920x1080px oder grösser}. Aus PowerPoint über Speichern unter, Format PNG, exportieren. |
+
+### `job_download` — 💼 Job-Download
+
+collection · Titel-Feld: `job_title`
+
+| Feld | Typ | Pflicht | Lok | Details |
+| --- | --- | :-: | :-: | --- |
+| `job_id` | string | ✓ |  | unique — Job aus Dualoo wählen — oder den Link des Bewerbungsformulars einfügen, z. B. {https://jobs.dualoo.com/link/40ab65e6-6180-48c8-87a1-da924ba72c78/apply}. Gespeichert wird die Dualoo-Job-ID. |
+| `job_title` | string |  |  | Wird beim Wählen des Jobs automatisch gesetzt und dient nur der Übersicht in dieser Liste. |
+| `files` | rich_text |  | ✓ | Blöcke: `download_item` — Erscheinen auf der Stellenanzeige über dem Kontakt. Pro Sprache eigene Dateien — leer lassen, wenn es für eine Sprache keine gibt. |
 
 ## Blöcke
 
@@ -917,7 +928,7 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`)
 
 ### `download_item` — 📄 Download
 
-block · Einsatz: Baustein (`product.body`, `media_tab.downloads`, `richtext_block.body`, `accordion_item.content`, `downloads_section.files`)
+block · Einsatz: Baustein (`product.body`, `job_download.files`, `media_tab.downloads`, `richtext_block.body`, `accordion_item.content`, `downloads_section.files`)
 
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
