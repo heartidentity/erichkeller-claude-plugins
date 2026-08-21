@@ -261,11 +261,11 @@ collection · manuell sortierbar
 
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
-| `source` | string | ✓ |  | Exakter Pfad {/a/b}, Wildcard {/a/*} (mit :splat im Ziel) oder Pfad mit Query {/a.php?x=y}. Im Query steht {*} für einen beliebigen Rest, z.B. {?area=climate-*}. |
+| `source` | string | ✓ | ✓ | Exakter Pfad {/a/b}, Wildcard {/a/*} (mit :splat im Ziel) oder Pfad mit Query {/a.php?x=y}. Im Query steht {*} für einen beliebigen Rest, z.B. {?area=climate-*}. Pro Sprache ein eigener Quellpfad — nur ausgefüllte Sprachen werden zu einer Regel. |
 | `target_type` | string | ✓ |  | Werte: `page` · `url` · `path` |
-| `target_page` | link |  |  | → `cms_page`, `home_page` |
-| `target_url` | string |  |  |  |
-| `target_path` | string |  |  |  |
+| `target_page` | link |  |  | → `cms_page`, `home_page` — Gilt für alle Sprachen: die Seite wird in der Sprache des jeweiligen Quellpfads aufgelöst. |
+| `target_url` | string |  | ✓ |  |
+| `target_path` | string |  | ✓ |  |
 | `status_code` | string | ✓ |  | Werte: `301` · `302` |
 
 ### `slide_deck` — 🎞️ Slide-Deck
