@@ -212,10 +212,10 @@ collection · manuell sortierbar · Titel-Feld: `name`
 
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
-| `name` | string | ✓ |  |  |
+| `name` | string | ✓ | ✓ | Der Name, wie er in der Liste und auf der Karte steht. Pro Sprache erfassen — Eigennamen bleiben meist gleich, beschreibende Namen werden übersetzt (z. B. {Showroom Genf Flughafen} / {Showroom Geneva Airport} / {Showroom aéroport de Genève}). |
 | `types` | links | ✓ |  | → `location_type` — Unter welchen Gruppen dieser Standort erscheint. Mehrere wählen, wenn er in mehr als einen Tab gehört. |
 | `image` | file |  |  | Innenaufnahme bei einem Showroom, Firmenlogo bei einem Partner. |
-| `street` | string |  |  | z. B. {Romanshornstrasse 17} |
+| `street` | text |  |  | z. B. {Romanshornstrasse 17}. Mehrzeilig möglich, etwa für ein Gebäude oder Postfach — jede Zeile wird als eigene Adresszeile ausgegeben. |
 | `postal_code` | string |  |  | z. B. {8583} |
 | `city` | string |  |  | z. B. {Sulgen} |
 | `country` | string | ✓ | ✓ | Immer erfassen, auch bei Schweizer Standorten — z. B. {Schweiz} oder {Niederlande}. Wird als letzte Adresszeile ausgegeben. |
