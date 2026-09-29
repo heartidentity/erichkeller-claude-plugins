@@ -108,7 +108,7 @@ collection · manuell sortierbar · Titel-Feld: `name`
 
 ### `industry` — 🏭 Branche
 
-collection · Titel-Feld: `name`
+collection · manuell sortierbar · Titel-Feld: `name`
 
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
@@ -117,7 +117,7 @@ collection · Titel-Feld: `name`
 
 ### `project_type` — 🏷️ Raum- / Objekttyp
 
-collection · Titel-Feld: `name`
+collection · manuell sortierbar · Titel-Feld: `name`
 
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
@@ -126,7 +126,7 @@ collection · Titel-Feld: `name`
 
 ### `project_kind` — 🔨 Projektart
 
-collection · Titel-Feld: `name`
+collection · manuell sortierbar · Titel-Feld: `name`
 
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
@@ -363,7 +363,7 @@ Einsatz: **Header** = erlaubt im `header`-Feld (genau 1 Block) · **Section** = 
 
 ### `nav_link` — 🔗 Link
 
-block · Einsatz: Baustein (`product.links`, `website.footer_newsletter_link`, `website.legal_links`, `hero_slide.link`, `page_intro.link`, `statement_media_section.link`, `content_with_media_section.links`, `text_column.link`, `text_columns_section.link`, `image_hotspot.link`, `reference_teasers_section.link`, `teaser_collection_section.link`, `link_list.link`, `link_list.items`, `job_listing_section.link`, `solution_slide.link`, `downloads_section.link`, `content_tab.link`)
+block · Einsatz: Baustein (`product.links`, `website.footer_newsletter_link`, `website.legal_links`, `hero_slide.link`, `page_intro.link`, `statement_media_section.link`, `content_with_media_section.links`, `text_column.link`, `text_columns_section.link`, `image_hotspot.link`, `reference_teasers_section.link`, `teaser_collection_section.link`, `link_list.link`, `link_list.items`, `job_listing_section.link`, `solution_slide.link`, `downloads_section.files`, `downloads_section.link`, `content_tab.link`)
 
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
@@ -943,7 +943,7 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`)
 | --- | --- | :-: | :-: | --- |
 | `heading` | string |  |  |  |
 | `description` | text |  |  | Optionaler Einleitungstext unter der Überschrift. |
-| `files` | rich_text |  |  | Blöcke: `download_item` |
+| `files` | rich_text |  |  | Blöcke: `download_item`, `nav_link` — Dateien und Links, in beliebiger Reihenfolge. Für den abschliessenden «Mehr erfahren»-Link das Feld Link verwenden. |
 | `link` | rich_text |  |  | Blöcke: `nav_link` · max. 1 |
 
 ### `pcon_configurator_section` — 🛋️ Konfigurator (pCon)
