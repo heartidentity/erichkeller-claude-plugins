@@ -20,6 +20,7 @@ Sprachen: `de` (Hauptsprache), `en`, `fr`. **Lok ✓** = lokalisiertes Feld: bei
 | `reference` | collection | 🏗️ Referenz |
 | `person` | collection | 👤 Person |
 | `department` | collection | 🏢 Abteilung |
+| `sales_region` | collection | 🗺️ Verkaufsgebiet |
 | `contact_group` | collection | 🎯 Kontaktgruppe |
 | `location_type` | collection | 🏷️ Standort-Typ |
 | `location` | collection | 📍 Standort |
@@ -158,21 +159,22 @@ collection · Titel-Feld: `title`
 
 ### `person` — 👤 Person
 
-collection · Titel-Feld: `internal_label`
+collection · Titel-Feld: `internal_label` · Personenverzeichnis. Personen erscheinen auf der Teamseite (sobald sie eine Abteilung haben), im Contact CTA (nur über eine 🎯 Kontaktgruppe, die pro Thema und Sprache die Person festlegt) und als Kontakt-Slide im Deck-Konfigurator {/collection}.
 
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
 | `internal_label` | string | ✓ |  | Nur für die Redaktion: Titel dieses Datensatzes in Listen und Auswahlfeldern. |
-| `name` | string | ✓ |  |  |
-| `role` | string |  | ✓ |  |
-| `qualification` | string |  | ✓ | Optionaler Titel oder Abschluss, z. B. {Dipl. Ing. FH} — steht auf der Teamseite als eigene Zeile unter der Rolle. |
-| `phone` | string |  |  | Internationales Format, z. B. {+41 71 644 88 88} — wird als tel:-Link ausgegeben. |
-| `email` | string |  |  | Persönliche oder Team-Adresse, z. B. {vorname.nachname@erichkeller.com} — wird als mailto:-Link ausgegeben. |
-| `video_call_url` | string |  |  | Buchungsformular für einen Video Call mit dieser Person. Nur wenn hier ein Link steht, kann der Contact CTA den Button {Video Call vereinbaren} anzeigen. Vollständige URL inkl. {https://}. |
-| `portrait` | file |  |  |  |
-| `solution` | link |  |  | → `solution` — Hauptgeschäftsbereich dieser Person — filtert die Kontaktauswahl im Deck-Konfigurator. |
-| `departments` | links |  |  | → `department` — Bestimmt die Teamseite: Personen mit mindestens einer Abteilung werden dort aufgelistet, alle anderen nicht. Mehrfachzuordnung möglich. |
-| **Fieldset «Kontaktsprachen»** | | | | Sprachen, in denen diese Person kontaktiert werden kann. |
+| `name` | string | ✓ |  | Vor- und Nachname. Erscheint auf der Teamseite (sortiert nach dem letzten Wort, also dem Nachnamen), im Contact CTA und auf dem Kontakt-Slide im Deck-Konfigurator. |
+| `role` | string |  | ✓ | Funktion, pro Sprache. Erscheint unter dem Namen auf der Teamseite, im Contact CTA und auf dem Kontakt-Slide im Deck-Konfigurator. |
+| `qualification` | string |  | ✓ | Optionaler Titel oder Abschluss, z. B. {Dipl. Ing. FH} — wird auf der Website derzeit nicht angezeigt (Platz auf der Teamseite). |
+| `phone` | string |  |  | Internationales Format, z. B. {+41 71 644 88 88} — als anklickbare Nummer auf der Teamseite, im Contact CTA und auf dem Kontakt-Slide im Deck-Konfigurator. |
+| `email` | string |  |  | Persönliche oder Team-Adresse, z. B. {vorname.nachname@erichkeller.com} — als mailto:-Link auf der Teamseite, im Contact CTA und auf dem Kontakt-Slide im Deck-Konfigurator. |
+| `video_call_url` | string |  |  | Buchungsformular für einen Video Call mit dieser Person, vollständige URL inkl. {https://}. Contact CTA: Der Button {Video Call vereinbaren} erscheint nur, wenn hier ein Link steht und die 🎯 Kontaktgruppe {Videocall anbieten} aktiviert hat. Deck-Konfigurator: steht als zusätzliche Zeile auf dem Kontakt-Slide. Auf der Teamseite nicht verwendet. |
+| `portrait` | file |  |  | Erscheint auf der Teamseite (ohne Bild: Platzhalter), im Contact CTA und als Bildhälfte des Kontakt-Slides im Deck-Konfigurator. |
+| `solution` | link |  |  | → `solution` — Nur für den Deck-Konfigurator: Die Kontaktauswahl lässt sich dort nach Geschäftsbereich filtern, und dieses Feld bestimmt, unter welchem Filter die Person erscheint. Ohne Geschäftsbereich ist sie nur sichtbar, solange kein Filter gewählt ist. Auf der Website (Teamseite, Contact CTA) wird das Feld weder angezeigt noch ausgewertet. |
+| `departments` | links |  |  | → `department` — Bestimmt die Teamseite: Personen mit mindestens einer Abteilung werden dort aufgelistet, alle anderen nicht. Die Abteilungen sind zugleich die Filter der Teamseite. Mehrfachzuordnung möglich. |
+| `sales_regions` | links |  |  | → `sales_region` — Gebiete, für die diese Person im Verkauf zuständig ist — stehen auf der Teamseite als Zeile {Verkaufsgebiet} und sind über deren Suche auffindbar. Leer lassen bei Personen ohne Verkaufsgebiet. Neue Gebiete unter {🗺️ Verkaufsgebiet} anlegen. |
+| **Fieldset «Kontaktsprachen»** | | | | Sprachen, in denen diese Person kontaktiert werden kann. Stehen auf der Teamseite als Zeile {Sprachen}. Im Deck-Konfigurator wird die Person nur in den angekreuzten Sprachversionen als Kontakt-Slide angeboten (ist keine angekreuzt: in allen). |
 | `lang_de` | boolean |  |  | Default: `true` |
 | `lang_en` | boolean |  |  |  |
 | `lang_fr` | boolean |  |  |  |
@@ -185,6 +187,14 @@ collection · manuell sortierbar · Titel-Feld: `name`
 | --- | --- | :-: | :-: | --- |
 | `name` | string | ✓ | ✓ |  |
 | `slug` | slug |  | ✓ | abgeleitet aus `name` |
+
+### `sales_region` — 🗺️ Verkaufsgebiet
+
+collection · manuell sortierbar · Titel-Feld: `name`
+
+| Feld | Typ | Pflicht | Lok | Details |
+| --- | --- | :-: | :-: | --- |
+| `name` | string | ✓ | ✓ | Steht so auf der Teamseite — ausgeschrieben, wie es Besucher verstehen: z. B. {Westschweiz}, {Deutschland}, {International}, keine Kürzel. |
 
 ### `contact_group` — 🎯 Kontaktgruppe
 
