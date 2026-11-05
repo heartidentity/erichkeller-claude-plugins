@@ -176,10 +176,6 @@ collection · Titel-Feld: `internal_label` · Personenverzeichnis. Personen ersc
 | `departments` | links |  |  | → `department` — Bestimmt die Teamseite: Personen mit mindestens einer Abteilung werden dort aufgelistet, alle anderen nicht. Die Abteilungen sind zugleich die Filter der Teamseite. Mehrfachzuordnung möglich. |
 | `sales_regions` | links |  |  | → `sales_region` — Gebiete, für die diese Person im Verkauf zuständig ist — stehen auf der Teamseite als Zeile {Verkaufsgebiet} und sind über deren Suche auffindbar. Leer lassen bei Personen ohne Verkaufsgebiet. Neue Gebiete unter {🗺️ Verkaufsgebiet} anlegen. |
 | `languages` | links |  |  | → `language` — Sprachen, in denen diese Person kontaktiert werden kann — stehen auf der Teamseite als Zeile {Sprachen}, in der Reihenfolge der Liste {🗣️ Sprache}, und sind über deren Suche auffindbar. Im Deck-Konfigurator wird die Person nur in den Sprachversionen (Deutsch, Englisch, Französisch) angeboten, die hier verknüpft sind; ist keine Sprache verknüpft: in allen. Neue Sprachen unter {🗣️ Sprache} anlegen. |
-| **Fieldset «Kontaktsprachen»** | | | | DEPRECATED — ersetzt durch das Feld {Sprachen} oben; Sprachen nur noch dort pflegen. Die Häkchen werden nach der Umstellung entfernt. |
-| `lang_de` | boolean |  |  | Default: `true` |
-| `lang_en` | boolean |  |  |  |
-| `lang_fr` | boolean |  |  |  |
 
 ### `department` — 🏢 Abteilung
 
@@ -204,7 +200,7 @@ collection · manuell sortierbar · Titel-Feld: `name`
 
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
-| `name` | string | ✓ | ✓ | Steht so auf der Teamseite, pro Sprache übersetzt: z. B. {Italienisch} / {Italian} / {Italien}. Die Reihenfolge der Liste (per Drag & Drop) ist die Reihenfolge auf der Teamseite. |
+| `name` | string | ✓ | ✓ | Steht so auf der Teamseite, pro Sprache übersetzt: z. B. {Italienisch} / {Italian} / {Italien}. Die Reihenfolge der Liste (per Drag-and-Drop) ist die Reihenfolge auf der Teamseite. |
 | `code` | string | ✓ |  | unique — ISO-Code, z. B. {de}, {it}, {fil}. Nicht sichtbar — der Deck-Konfigurator vergleicht ihn mit seinen Sprachversionen {de}, {en} und {fr}. |
 
 ### `contact_group` — 🎯 Kontaktgruppe
