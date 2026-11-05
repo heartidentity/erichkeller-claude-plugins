@@ -21,6 +21,7 @@ Sprachen: `de` (Hauptsprache), `en`, `fr`. **Lok ✓** = lokalisiertes Feld: bei
 | `person` | collection | 👤 Person |
 | `department` | collection | 🏢 Abteilung |
 | `sales_region` | collection | 🗺️ Verkaufsgebiet |
+| `language` | collection | 🗣️ Sprache |
 | `contact_group` | collection | 🎯 Kontaktgruppe |
 | `location_type` | collection | 🏷️ Standort-Typ |
 | `location` | collection | 📍 Standort |
@@ -174,7 +175,8 @@ collection · Titel-Feld: `internal_label` · Personenverzeichnis. Personen ersc
 | `solution` | link |  |  | → `solution` — Nur für den Deck-Konfigurator: Die Kontaktauswahl lässt sich dort nach Geschäftsbereich filtern, und dieses Feld bestimmt, unter welchem Filter die Person erscheint. Ohne Geschäftsbereich ist sie nur sichtbar, solange kein Filter gewählt ist. Auf der Website (Teamseite, Contact CTA) wird das Feld weder angezeigt noch ausgewertet. |
 | `departments` | links |  |  | → `department` — Bestimmt die Teamseite: Personen mit mindestens einer Abteilung werden dort aufgelistet, alle anderen nicht. Die Abteilungen sind zugleich die Filter der Teamseite. Mehrfachzuordnung möglich. |
 | `sales_regions` | links |  |  | → `sales_region` — Gebiete, für die diese Person im Verkauf zuständig ist — stehen auf der Teamseite als Zeile {Verkaufsgebiet} und sind über deren Suche auffindbar. Leer lassen bei Personen ohne Verkaufsgebiet. Neue Gebiete unter {🗺️ Verkaufsgebiet} anlegen. |
-| **Fieldset «Kontaktsprachen»** | | | | Sprachen, in denen diese Person kontaktiert werden kann. Stehen auf der Teamseite als Zeile {Sprachen}. Im Deck-Konfigurator wird die Person nur in den angekreuzten Sprachversionen als Kontakt-Slide angeboten (ist keine angekreuzt: in allen). |
+| `languages` | links |  |  | → `language` — Sprachen, in denen diese Person kontaktiert werden kann — stehen auf der Teamseite als Zeile {Sprachen}, in der Reihenfolge der Liste {🗣️ Sprache}, und sind über deren Suche auffindbar. Im Deck-Konfigurator wird die Person nur in den Sprachversionen (Deutsch, Englisch, Französisch) angeboten, die hier verknüpft sind; ist keine Sprache verknüpft: in allen. Neue Sprachen unter {🗣️ Sprache} anlegen. |
+| **Fieldset «Kontaktsprachen»** | | | | DEPRECATED — ersetzt durch das Feld {Sprachen} oben; Sprachen nur noch dort pflegen. Die Häkchen werden nach der Umstellung entfernt. |
 | `lang_de` | boolean |  |  | Default: `true` |
 | `lang_en` | boolean |  |  |  |
 | `lang_fr` | boolean |  |  |  |
@@ -195,6 +197,15 @@ collection · manuell sortierbar · Titel-Feld: `name`
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
 | `name` | string | ✓ | ✓ | Steht so auf der Teamseite — ausgeschrieben, wie es Besucher verstehen: z. B. {Westschweiz}, {Deutschland}, {International}, keine Kürzel. |
+
+### `language` — 🗣️ Sprache
+
+collection · manuell sortierbar · Titel-Feld: `name`
+
+| Feld | Typ | Pflicht | Lok | Details |
+| --- | --- | :-: | :-: | --- |
+| `name` | string | ✓ | ✓ | Steht so auf der Teamseite, pro Sprache übersetzt: z. B. {Italienisch} / {Italian} / {Italien}. Die Reihenfolge der Liste (per Drag & Drop) ist die Reihenfolge auf der Teamseite. |
+| `code` | string | ✓ |  | unique — ISO-Code, z. B. {de}, {it}, {fil}. Nicht sichtbar — der Deck-Konfigurator vergleicht ihn mit seinen Sprachversionen {de}, {en} und {fr}. |
 
 ### `contact_group` — 🎯 Kontaktgruppe
 
