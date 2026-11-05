@@ -53,6 +53,7 @@ tree (Seitenbaum)
 | `seo` | seo |  | ✓ |  |
 | `header` | rich_text |  | ✓ | Blöcke: `hero_slider`, `page_intro`, `statement_media_section` · max. 1 |
 | `sections` | rich_text |  | ✓ | Blöcke: `anchor`, `spacer_section`, `statement_media_section`, `content_with_media_section`, `sticky_scroll_section`, `tabs_with_media_section`, `text_columns_section`, `richtext_block`, `accordion`, `stats_section`, `facts_figures_section`, `pikto_section`, `media_block`, `image_compare_section`, `external_video_block`, `media_slider_section`, `reference_teasers_section`, `available_models_section`, `teaser_collection_section`, `image_text_grid_section`, `collection_section`, `contact_cta`, `link_list`, `customer_marquee_section`, `quote_section`, `quotes_slider_section`, `hubspot_form_section`, `job_listing_section`, `locations_section`, `image_marquee`, `airflow_animation`, `solution_slider`, `product_detail_section`, `downloads_section`, `pcon_configurator_section`, `product_carousel_section`, `color_slider_section`, `content_tab_nav_section`, `flexible_image_section` |
+| `slide_decks` | links |  |  | → `slide_deck` — Optional. Zeigt auf dieser Seite den Button {Merken} und bietet die Decks zum Hinzufügen an {mehrere Decks erscheinen gemeinsam in einer Checkliste}. Leer = kein Button. |
 
 ### `solution` — 💡 Geschäftsbereich
 
@@ -293,7 +294,9 @@ collection · manuell sortierbar · Titel-Feld: `title`
 | --- | --- | :-: | :-: | --- |
 | `title` | string | ✓ | ✓ |  |
 | `solution` | link |  |  | → `solution` — Gruppiert das Deck in der Auswahl des Konfigurators. Leer lassen für allgemeine Decks. |
+| `kind_label` | string |  | ✓ | Zweite Zeile in der Auswahl, z. B. {Lösung Übersicht}. Leer = Standardtext. |
 | `slides` | gallery |  | ✓ | Ein Bild pro Slide, 16:9 {1920x1080px oder grösser}. Aus PowerPoint über Speichern unter, Format PNG, exportieren. |
+| `variants` | rich_text |  | ✓ | Blöcke: `slide_set` — Optional. Mit Sets wird die Auswahl auf der Seite zur Checkliste {Übersicht + einzelne Varianten}; ohne Sets wird das Deck als Ganzes hinzugefügt. |
 
 ### `job_download` — 💼 Job-Download
 
@@ -324,6 +327,7 @@ Einsatz: **Header** = erlaubt im `header`-Feld (genau 1 Block) · **Section** = 
 | `sticky_scroll_entry` | 🗓️ Sticky Scroll Entry | Baustein |
 | `sticky_scroll_section` | 📜 Sticky Scroll Text-Media | Section |
 | `media_tab` | 🗂️ Media Tab | Baustein |
+| `slide_set` | 🎞️ Slide-Set | Baustein |
 | `tabs_with_media_section` | 🗂️ Tabs with Media | Section |
 | `text_column` | 📑 Text Column | Baustein |
 | `text_columns_section` | 📑 Text Columns | Section |
@@ -517,6 +521,17 @@ block · Einsatz: Baustein (`tabs_with_media_section.items`)
 | `text` | structured_text |  |  | Record-Links: `cms_page`, `reference`, `product` · Headings:  · Marks: strong, underline, strikethrough · Nodes: link, itemLink |
 | `media` | file |  |  |  |
 | `downloads` | rich_text |  |  | Blöcke: `download_item` — Optionale Download-Links, die unter dem Text des aktiven Tabs erscheinen. |
+
+### `slide_set` — 🎞️ Slide-Set
+
+block · Einsatz: Baustein (`slide_deck.variants`)
+
+| Feld | Typ | Pflicht | Lok | Details |
+| --- | --- | :-: | :-: | --- |
+| `title` | string | ✓ |  | Z. B. {Talky S75}. Erscheint als Zeile in der Auswahl. |
+| `label` | string |  |  | Zweite Zeile in der Auswahl, z. B. {Produktvariante}. Leer = Standardtext. |
+| `thumbnail` | file |  |  | Optional. Leer = erste Slide des Sets. |
+| `slides` | gallery |  |  | Ein Bild pro Slide, 16:9 {1920x1080px oder grösser}. |
 
 ### `tabs_with_media_section` — 🗂️ Tabs with Media
 
@@ -871,6 +886,7 @@ block · Einsatz: Section (`home_page.sections`, `cms_page.sections`, `website.p
 | Feld | Typ | Pflicht | Lok | Details |
 | --- | --- | :-: | :-: | --- |
 | `embed` | text | ✓ |  | Einfach aus HubSpot kopieren: Einbettungscode (Standard oder Entwickler) oder eine Formular-URL aus der HubSpot-App — Portal-ID, Formular-ID und Region werden automatisch erkannt. |
+| `layout` | string |  |  | Werte: `narrow` · `aligned` · Default: `narrow` — «Bündig» richtet das Formular an der Textspalte des Page-Intro-Lead aus, z. B. wenn es direkt unter einem Page Intro steht. |
 | `prefill` | rich_text |  |  | Blöcke: `hubspot_prefill` — Optional: füllt Formularfelder aus Parametern in der Adresse dieser Seite vor. Nötig, damit ein Kontakt-Button sein Thema mitgeben kann — ohne Eintrag startet das Formular leer. |
 
 ### `job_listing_section` — 💼 Job Listing
